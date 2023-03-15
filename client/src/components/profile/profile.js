@@ -106,7 +106,7 @@ const Profile = () => {
 
 									<div className='profile-buttons'>
 										<Link to='/password/update'>Change Password</Link>
-										<Link to='/admin'>Admin Panel</Link>
+										{user?.role === 'admin' && <Link to='/admin'>Admin Panel</Link>}
 										<button onClick={handleProfileUpdate}>{loading ? 'Loading...' : 'Save Changes'}</button>
 									</div>
 								</div>
