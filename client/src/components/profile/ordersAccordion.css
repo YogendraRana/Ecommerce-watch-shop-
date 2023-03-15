@@ -1,0 +1,137 @@
+/**************Order Summary****************/
+.order-item > .order-summary{
+	width: 100%;
+	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.order-item > .order-summary > div{
+	width: 20%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.order-item > .order-summary > div > p{
+	font-size: 1.4rem;
+	margin-bottom: 0.5rem;
+	font-weight: bolder;
+}
+
+.order-item > .order-summary > div > span{
+	font-size: 1.25rem;
+}
+
+.order-item > .order-summary > i{
+	height: 3rem;
+	width: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	border-radius: 0.25rem;
+	background-color: #ededed;
+	transition: all 0.2s ease-in;
+}
+
+/**************Order Detail****************/
+.order-item > .order-detail{
+	width: 100%;
+	padding: 1rem;
+	transition: all 0.2s ease-in;
+}
+
+.order-item > .order-detail > p{
+	padding-bottom: 0.75rem;
+	font-size: 1.4rem;
+	font-weight: bolder;
+}
+
+.order-item > .order-detail > .detail-content{
+	width: 100%;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	background: #ededed;
+}
+
+.order-item > .order-detail > .detail-content > div {
+	margin-bottom: 1.5rem;
+}
+
+.order-item > .order-detail > .detail-content > div:last-child{
+	margin-bottom: 0;
+}
+
+.order-item > .order-detail > .detail-content > div > p{
+	font-size: 1.25rem;
+	margin-bottom: 0.25rem;
+}
+
+.order-item > .order-detail > .detail-content > div > p:first-child{
+	margin-bottom: 0.5rem;
+	font-size: 1.45rem;
+	font-weight: bolder;
+}
+
+
+/****************Order Detai Items List****************/
+.order-items{
+	width: 100%;
+}
+
+.order-items > div{
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.order-items > div:last-child{
+	margin-bottom: 0;
+}
+
+.order-items > div > img{
+	height: 6rem;
+	width: 12rem;
+	min-width: 12rem;
+	
+	object-fit: cover;
+}
+
+.order-items > div > p{
+	margin-left: 2rem;
+	font-size: 1.25rem;
+}
+
+.order-items > div > p:nth-child(2){
+	width: 8rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.order-items > div > p:last-child{
+	margin-left: 3rem;
+}
+
+
+/****************************************************Responsive Code****************************************/
+
+/*Laptop Screen*/
+@media (max-width: 1380px){
+
+}
+
+/*Tablet Screen*/
+@media (max-width: 992px){
+ 
+}
+
+/*Mobile Screen*/
+@media (max-width: 480px){
+	.order-items > div > img{
+		width: 8rem;
+		min-width: 8rem;
+	}
+}

@@ -1,0 +1,232 @@
+.navbar {
+  height: var(--nav-height);
+  width: 100%;
+  padding: 0 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  z-index: 50;
+}
+
+.navbar.active{
+  background-color: white;
+}
+
+/*******************************Logo***************************/
+.navbar > a.logo {
+  padding: 0.5rem 1rem;
+  color: black;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  border: 1px solid #24252a;
+}
+
+/*******************************Menu***************************/
+.navbar > .menu {
+  height: 100%;
+  margin-right: 4rem;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in;
+}
+
+.navbar > .menu > .cross{
+  display: none;
+}
+
+.navbar > .menu > div > a{
+  margin-left: 1rem;
+  font-size: 1.4rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  color: black;
+}
+
+.navbar > .menu > div:hover > a {
+  background-color: #ededed;
+}
+
+/*******************************Search box***************************/
+.navbar > form{
+  height: 3.5rem;
+  display: flex;
+}
+
+.navbar > form > input{
+  width: 18rem;
+  margin-right: 0.25rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ededed;
+  border-radius: 5px 0 0 5px;
+}
+
+.navbar > form > button{
+  height: 3.5rem;
+  width: 3.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ededed;
+  border-radius: 0 5px 5px 0;
+}
+
+.search-icon i{
+  font-size: 1.5rem;
+}
+
+/*******************************Nav Icons***************************/
+.navbar > .nav-icons{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navbar > .nav-icons > a,
+.navbar > .nav-icons > div{
+  height: 3.5rem;
+  width: 3.5rem;
+  color: black;
+  font-size: 1.4rem;
+  margin-left: 1rem;
+  text-align: center;
+  line-height: 3.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  background-color: #ededed;
+}
+
+.navbar > .nav-icons > a:hover,
+.navbar > .nav-icons > div:hover{
+  background-color: #b2beb5;
+  transition: all 0.2s;
+}
+
+.navbar > .nav-icons > div.profile-btn{
+  position: relative;
+}
+
+.navbar > .nav-icons > div.profile-btn > .speed-dial{
+  width: 15rem;
+  padding: 1rem;
+  position: absolute;
+  top: 4.75rem;
+  right: 0rem;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  color: white;
+  display: none;
+  background-color: #ededed;
+  transition: all 0.2s;
+}
+
+.navbar > .nav-icons > div.profile-btn > .speed-dial.active:before{
+  position: absolute;
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  top: -0.8rem;
+  right: 1rem;
+  transform: rotate(45deg);
+  background-color: #ededed;
+  transition: all 0.2s cubic-bezier(0.68, -0.55,0.265, 1.55);
+}
+
+.navbar > .nav-icons > div.profile-btn > .speed-dial.active{
+  display: flex;
+}
+
+.navbar > .nav-icons > div.profile-btn > .speed-dial.active > a{
+  width: 100%;
+  padding: 0 1rem;
+  margin-bottom: 0.5rem;
+  color: black;
+  text-align: left;
+}
+
+.navbar > .nav-icons > div.profile-btn > .speed-dial.active > a:hover{
+  background: #b2beb5;
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar > .nav-icons > div.profile-btn > .speed-dial.active > button{
+  width: 100%;
+  padding: 0.75rem;
+  color: white;
+  background-color: #24252a;
+}
+
+.navbar > .nav-icons > .hamburger{
+  display: none;
+}
+
+.navbar > .nav-icons > a > .nav-total-quantity{
+  height: 1.5rem;
+  width: 1.5rem;
+  font-size: 0.75rem;
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  background-color: white;
+  border: 1px solid #b2beb5;
+  border-radius: 50%;
+}
+
+/****************************************************Media Query****************************************/
+
+/*Laptop Screen Screen*/
+@media (max-width: 1024px){
+   
+}
+
+/*Tablet Screen*/
+@media (max-width: 768px){
+  .navbar > .menu {
+    display: none;
+  }
+
+  .navbar > .menu > div {
+    margin-bottom: 3rem;
+  }
+
+  .navbar > .menu.active{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ededed;
+    z-index: 25;
+  }
+
+  .navbar > .menu.active > .cross{
+    display: block;
+    margin-bottom: 3rem;
+    cursor: pointer;
+  }
+
+  .navbar > .nav-icons > .hamburger{
+    display: block;
+  }
+}
+
+/*Mobile Screen*/
+@media (max-width: 480px){
+  .navbar > form{
+    display: none;
+  }
+}

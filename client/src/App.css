@@ -1,0 +1,91 @@
+:root{
+  /****************Colors***************/
+  --primary-color: #ffffff;
+  --secondary-color: #24252a;
+  --dark-light: #ededed;
+  --dark-medium: #b2beb5;
+
+  /****************Font Sizes***************/
+  --font-extra-small: 1rem;
+  --font-small: 1.25rem;
+  --font-medium-small: 1.4rem;
+  --font-medium: 1.5rem;
+  --font-medium-large: 1.6rem;
+  --font-large: 1.75rem;
+  --font-extra-large: 2rem;
+
+  /****************Heights***************/
+  --nav-height: 7rem;
+  --cart-item-height: 10rem;
+
+  --padding: 1.25rem;
+}
+
+/********************Global Styles********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+ul{
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+input, button{
+  border:none;
+  outline: none;
+}
+
+html{
+  font-size: 62.5%; 
+  /* 1rem=16px=100%, but we want 1rem=10px. In percentage, 10/16*100 = 62.5.*/
+}
+
+/*********************** App **********************/
+.app {
+  width: 100%;
+  font-family: Byington;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+
+/************************Tablet Screen************************/
+@media (max-width: 1024px){
+  html{
+    font-size: 62.5%;
+  }
+}
+
+
+@media (max-width: 992px){
+  html{
+    font-size: 60%;
+  }
+}
+
+
+@media (max-width: 768px){
+  html{
+    font-size: 57%;
+  }
+}
+
+
+@media (max-width: 600px){
+  html{
+    font-size: 53.5%;
+  }
+}
+
+/************************Mobile Screen************************/
+@media (max-width: 480px){
+  html{
+    font-size: 50%;
+  }
+}

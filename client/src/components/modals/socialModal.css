@@ -1,0 +1,186 @@
+.share-modal{
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 100vh;
+	width: 100%;
+	z-index: 100;
+}
+
+.modal-links{
+	height: 100%;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-links .icon{
+	margin: 0 2rem;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	transition: all 0.2s cubic-bezier(0.68, -0.55,0.265, 1.55);
+}
+
+.modal-links .icon p{
+	position: absolute;
+	top: -7rem;
+	color: white;
+	font-size: var(--font-large);
+	padding: 1rem 1.8rem;
+	border-radius: 50px;
+	box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);	
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.2s cubic-bezier(0.68, -0.55,0.265, 1.55);
+}
+
+.modal-links .icon p:before{
+	position: absolute;
+	content: "";
+	height: 1.5rem;
+	width: 1.5rem;
+	bottom: -0.8rem;
+	left: 50%;
+	transform: translateX(-50%) rotate(45deg);
+	transition: all 0.2s cubic-bezier(0.68, -0.55,0.265, 1.55);
+}
+
+.modal-links .icon:hover p{
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.modal-links .icon span{
+	position: relative;
+	height: 6rem;
+	width: 6rem;
+	display: block;
+	text-align: center;
+	border-radius: 50%;
+	box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.modal-links .icon span i{
+	font-size: 2.5rem;
+	line-height: 6rem;
+	color: white;
+}
+
+.modal-links .icon:hover span{
+	color: white;
+}
+
+.modal-links .icon:hover p,
+.modal-links .icon:hover span{
+	text-shadow: 0 -0.1rem 0 rgba(0, 0, 0, 0.4);
+}
+
+.modal-links .facebook:hover p,
+.modal-links .facebook:hover p:before,
+.modal-links .facebook span{
+	background-color: #3b5999;
+}
+
+.modal-links .instagram:hover p,
+.modal-links .instagram:hover p:before,
+.modal-links .instagram span{
+	background-color: #e1306c;
+}
+
+.modal-links .twitter:hover p,
+.modal-links .twitter:hover p:before,
+.modal-links .twitter span{
+	background-color: #46c1f6;
+}
+
+.modal-links .messenger:hover p,
+.modal-links .messenger:hover p:before,
+.modal-links .messenger span{
+	background-color: #006aff;
+}
+
+.modal-links .mail:hover p,
+.modal-links .mail:hover p:before,
+.modal-links .mail span{
+	background-color: #171515;
+}
+
+.social-modal-close{
+	position: absolute;
+	top: 5rem;
+	right: 5rem;
+	bottom: 10rem;
+	padding: 0.75rem;
+	cursor: pointer;
+}
+
+.social-modal-close i{
+	font-size: 2.5rem;
+	color: white;
+}
+
+.social-modal-close:hover i{
+	transform: scale(1.25);
+	transition: all 0.2s cubic-bezier(0.68, -0.55,0.265, 1.55);
+}
+
+/***********************************************************************************************************/
+/****************************************************Responsive Code****************************************/
+/***********************************************************************************************************/
+
+/************************Tablet Screen************************/
+@media (max-width: 1024px){
+	/***No Css***/
+}
+
+
+@media (max-width: 992px){
+	/***No Css***/
+}
+
+
+@media (max-width: 768px){
+    /***No Css***/
+}
+
+
+@media (max-width: 600px){
+   /***No Css***/
+ }
+
+/************************Mobile Screen************************/
+@media (max-width: 480px){
+	.modal-links{
+		flex-direction: column;
+	}
+
+	.modal-links .icon{
+		margin: 2rem 0;
+		flex-direction: row;
+	}
+
+	.modal-links .icon p{
+		top: 50%;
+		left: 8rem;
+		transform: translateY(-50%);
+		border-radius: 5px;
+	}
+
+	.modal-links .icon p:before{
+		top: 50%;
+		left: -0.6rem;
+		transform: translateY(-50%) rotate(45deg);
+	}
+
+	.social-modal-close{
+		bottom: 5rem;
+	}
+}

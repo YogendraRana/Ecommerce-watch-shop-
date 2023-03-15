@@ -1,0 +1,158 @@
+/*****************************Footer-head*******************************/
+.footer-wrapper{
+	width: 100%;
+	display: flex;
+	margin-top: 1.25rem;
+	padding: 5rem;
+	color: var(--primary-color);
+	background-color: var(--secondary-color);
+}
+
+.footer-content{
+	width: 80%;
+	padding-right: 7.5rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+
+/*****************************Footer-Main-Menu*******************************/
+.footer-menu h4,.shop-links h4,.support h4,.company h4{
+	font-size: var(--font-medium-large);
+	margin-bottom: 1.5rem;
+}
+
+.footer-menu ul a,.shop-links ul a,.support ul a,.company ul a{
+	color: var(--primary-color);
+	font-size: var(--font-small);
+}
+
+.footer-menu ul a li,.shop-links ul a li,.support ul a li,.company ul a li{
+	margin-bottom: 1rem;
+}
+
+.footer-menu ul a:hover,.shop-links ul a:hover,.support ul a:hover,.company ul a:hover{
+	color: teal;
+	transition: 0.2s ease;
+}
+
+/*****************************Footer-others*******************************/
+.footer-others{
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.footer-social,.footer-payment{
+	margin-bottom: 2rem;
+}
+
+
+/*****************************Footer-social*******************************/
+.footer-social h4,.footer-payment h4,.footer-subscribe h4{
+	font-size: var(--font-medium);
+	margin-bottom: 0.5rem;
+}
+
+.footer-social-links{
+	display: flex;
+}
+
+.footer-social-links a{
+	height: 3rem;
+	width: 3rem;
+	background-color: #ededed;
+	color: var(--secondary-color);
+	border-radius: 50%;
+	margin-right: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
+}
+
+.footer-social-links a i{
+	font-size: var(--font-small);
+}
+
+/*****************************Payment-method*******************************/
+
+.footer-payment-icons i{
+	margin-right: 1rem;
+	font-size: 4rem;
+}
+
+.footer-social-links a:hover{
+	background: #b2beb5;
+}
+
+/*****************************Footer-subscribe*******************************/
+
+.footer-subscribe-form input{
+	width: 100%;
+	padding: 1rem;
+  	border-radius: 5px;
+	margin-bottom: 1rem;
+}
+
+.footer-subscribe-form button{
+	cursor: pointer;
+	width: 100%;
+	padding: 1rem 0;
+	border-radius: 5px;
+	background: red;
+	color: var(--primary-color);
+	transition: 0.2s ease-in-out;
+}
+
+.footer-subscribe-form button:hover{
+	background: #a91b0d;
+}
+
+/***********************************************************************************************************/
+/****************************************************Responsive Code****************************************/
+/***********************************************************************************************************/
+
+/************************Large Tablet Screen************************/
+@media (max-width: 1024px){
+	/***No Css***/
+}
+
+/************************Medium Tablet Screen************************/
+@media (max-width: 992px){
+	/***No Css***/
+}
+
+/************************Small Tablet Screen************************/
+@media (max-width: 780px){
+	.footer-wrapper{
+		flex-direction: column;
+		padding: 3rem
+	}
+
+	.footer-content{
+		width: 100%;
+		padding-right: 0;
+		padding-bottom: 2.5rem;
+		display: grid;
+		grid-row-gap: 2.5rem;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.footer-others{
+		width: 100%;
+		padding: 2rem 0;
+	}
+}
+
+@media (max-width: 600px){
+   
+}
+
+/************************Mobile Screen************************/
+@media (max-width: 480px){
+ 
+}

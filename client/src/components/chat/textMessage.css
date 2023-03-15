@@ -1,0 +1,81 @@
+/**************************Incoming and Outgoing Message*******************************/
+.text-message{
+	margin-bottom: 1rem;
+	width: 100%;
+	display: flex;
+}
+
+.text-message.outgoing{
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.text-message.incoming{
+	display: flex;
+}
+
+
+.text-message.incoming > .text-message-picture{
+	margin-right: 1rem;
+}
+
+.text-message.outgoing > .text-message-picture{
+	margin-left: 1rem;
+}
+
+
+
+.text-message.incoming > .text-message-picture > img,
+.text-message.outgoing > .text-message-picture > img{
+	height: 2.5rem;
+	width: 2.5rem;
+	padding: 0.2rem;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 0.1rem solid black;
+}
+
+
+
+.text-message.incoming > .text-message-content,
+.text-message.outgoing > .text-message-content{
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+.text-message.incoming > .text-message-content > p:first-child{
+	max-width: 50rem;
+	padding: 1rem;
+	font-size: 1.25rem;
+	background-color: #ededed;
+	border-radius: 0 1rem 1rem 1rem;
+}
+
+.text-message.outgoing > .text-message-content > p:first-child{
+	max-width: 50rem;
+
+	padding: 1rem;
+	font-size: 1.25rem;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.75);
+	border-radius: 1rem 0 1rem 1rem;
+}
+
+
+
+
+.text-message.incoming > .text-message-content > p:last-child{
+	margin: 0.25rem 0;
+	display: flex;
+	justify-content: flex-start;
+	font-size: 1rem;
+}
+
+.text-message.outgoing > .text-message-content > p:last-child{
+	margin: 0.25rem 0;
+	display: flex;
+	justify-content: flex-end;
+	font-size: 1rem;
+}

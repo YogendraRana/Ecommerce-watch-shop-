@@ -1,0 +1,63 @@
+.participant{
+	width: 100%;
+	display: flex;
+	margin-bottom: 0.5rem;
+	align-items: center;
+	cursor: pointer;
+	transition: 0.2s all ease-in;
+}
+
+.participant:hover{
+	background-color: #ededed;
+}
+
+.participant > img{
+	height: 5rem;
+	width: 5rem;
+	min-width: 5rem;
+	margin-right: 1rem;
+	padding: 0.25rem;
+	object-fit: cover;
+	border:1px solid black;
+}
+
+.participant > div{
+	height: 5rem;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.participant > div > p.participant-name{
+	font-size: 1.5rem;
+}
+
+.participant > div > p.chat-state{
+	margin-top: 0.5rem;
+	color: rgba(0, 0, 0, 0.55);
+}
+
+/*******************************Media Query*******************************/
+
+/*Laptop Screen*/
+@media(max-width: 1380px){
+
+}
+
+/*Tablet Screen*/
+@media(max-width: 992){
+    
+}
+
+/*Mobile Screen*/
+@media(max-width: 480px){
+    .participant > div{
+        display: none;
+    }
+
+    .participant > img{
+		margin-right: 0;
+	}
+}

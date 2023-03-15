@@ -1,0 +1,133 @@
+.payment-container{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/**********************Payment Options**********************/
+
+.payment-container > .payment-options{
+	height: 5rem;
+	width: 100%;
+	margin-bottom: 2rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.payment-container > .payment-options > li{
+	color: #b2beb5;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #ededed;
+}
+
+.payment-container > .payment-options > li.active{
+	border-radius: 0.5rem;
+	color: white;
+	background-color: #24252a;
+	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+	transition: all 0.1s ease-in;
+}
+
+.payment-container > .payment-options > li > i{
+	margin-right: 1.5rem;
+	font-size: 1.75rem;
+}
+
+.payment-container > .payment-options > li > span{
+	font-size: 1.5rem;
+}
+
+
+/*************************Payment Methods**************************/
+.payment-container > .payment-methods{
+	height: 100%;
+	width: 100%;
+}
+
+.payment-container > .payment-methods > form.card-payment{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.payment-container > .payment-methods > form.card-payment > div{
+	width: 100%;
+	margin-bottom: 2rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.payment-container > .payment-methods > form.card-payment > div:nth-child(3),
+.payment-container > .payment-methods > form.card-payment > div:nth-child(4){
+	width: 49.5%;
+}
+
+.payment-container > .payment-methods > form.card-payment > div:last-child{
+	margin-bottom: 0;
+}
+
+.payment-container > .payment-methods > form.card-payment > div > label{
+	margin-bottom: 0.75rem;
+	font-size: 1.5rem;
+}
+
+.payment-container > .payment-methods > form.card-payment > div > input,
+.payment-container > .payment-methods > form.card-payment > div > .input-field{
+	padding: 1rem;
+	border: 1px solid #ededed;
+}
+
+.payment-container > .payment-methods > form.card-payment > div > input:focus::placeholder{
+	opacity: 0;
+	transition: all 0.1s;
+}
+
+.payment-container > .payment-methods > form.card-payment > div.payment-btns{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.payment-container > .payment-methods > form.card-payment > div.payment-btns > button{
+	height: 4.5rem;
+	width: 12rem;
+	border-radius: 5px;
+	cursor: pointer;
+	color: white;
+	background-color: black;
+	font-size: 1.25rem;
+}
+
+.payment-container > .payment-methods > form.card-payment > div.payment-btns > button:hover{
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	transition: all 0.2s ease-in;
+}
+
+/************************Media Query************************/
+
+/*Laptop Screen*/
+@media (max-width: 1380px){
+	
+}
+
+/*Tablet Screen*/
+@media (max-width: 992px){
+	
+}
+
+/*Mobile Screen*/
+@media (max-width: 480px){
+	.payment-container > .payment-methods > form.card-payment > div:nth-child(3),
+	.payment-container > .payment-methods > form.card-payment > div:nth-child(4){
+	width: 100%;
+	}
+}

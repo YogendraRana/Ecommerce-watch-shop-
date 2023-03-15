@@ -1,0 +1,147 @@
+.update-product{
+	height: 100vh;
+	width: 100%;
+	padding: 1rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 100;
+	background-color: rgba(49, 49, 49, 0.85);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.update-product > i{
+	font-size: 3.5rem;
+	color: white;
+	position: absolute;
+	top: 5rem;
+	right: 5rem;
+	cursor: pointer;
+}
+
+.update-product > i:hover{
+	transform: scale(1.25);
+	transition: all 0.2s ease-in;
+}
+
+.update-product > form{
+	height: 85%;
+	width: 35%;
+	padding: 2rem 3rem;
+	background: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.update-product > form > div{
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.update-product > form > div > h2{
+	width: 100%;
+	margin-bottom: 1rem;
+	font-size: 2.25rem;
+	text-align: center;
+}
+
+.update-product > form > div > label{
+	width: 25%;
+	margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+.update-product > form > div > input,
+.update-product > form > div > select,
+.update-product > form > div > textarea{
+	width: 100%;
+	margin-bottom: 0.25rem;
+	padding: 1rem;
+	border: 1px solid rgba(1, 1, 1, 0.1);
+}
+
+.update-product > form > div > textarea{
+	height: 10rem;
+}
+
+.update-product > form > div > input:focus::placeholder,
+.update-product > form > div > textarea:focus::placeholder{
+	opacity: 0;
+	transition: all 0.15s;
+}
+
+.update-product > form > div > div.update-product-images{
+	width: 100%;
+	margin-bottom: 1rem;
+	padding:  0.25rem;
+	border: 1px solid rgba(1, 1, 1, 0.1);
+	display: flex;
+	overflow: auto;
+}
+
+.update-product > form > input[type = 'file']{
+	width: 100%;
+	padding: 0.25rem;
+}
+
+.update-product > form > div > .update-product-images {
+	width: 100%;
+	padding: 0.25rem;
+	border: 1px solid #b2beb5;
+}
+
+.update-product > form > div > .update-product-images > img{
+	height: 5rem;
+	width: 5rem;
+	min-width: 5rem;
+	margin-right: 0.25rem;
+	object-fit: cover;
+}
+
+.update-product > form > div.update-product-btns{
+	margin-top: 1rem;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.update-product > form > div.update-product-btns > button{
+	height: 3.5rem;
+	width: 12.5rem;
+	border-radius: 50px;
+	cursor: pointer;
+	background-color: black;
+	color: white;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/************************Media Query************************/
+
+/*Laptop*/
+@media (max-width: 1024px){
+
+}
+
+/*Tablet*/
+@media (max-width: 992px){
+	.update-product > form{
+		height: 60%;
+		width: 70%;
+	}
+}
+
+/*Mobile*/
+@media (max-width: 480px){
+	.update-product > form{
+		width: 90%;
+	}
+}

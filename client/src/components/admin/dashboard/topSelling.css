@@ -1,0 +1,84 @@
+.top-selling{
+	width: 100%;
+	padding: 1rem;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+.top-selling > h3{
+	margin-bottom: 2rem;
+	font-size: 1.75rem;
+	text-align: center;
+}
+
+.top-selling > ul{
+	width: 100%;
+	display: grid;
+	grid-gap: 0.5rem;
+	place-items: center;
+}
+
+.top-selling > ul > p{
+	font-size: 1.5rem;
+}
+
+.top-selling > ul > li{
+	width: 100%;
+	padding: 0.25rem;
+	display: flex;
+	justify-content: space-between;
+	overflow: hidden;
+	border: 1px solid #ededed;	
+	border-radius: 5px;
+}
+
+.top-selling > ul > li > div{
+	width: 25%;
+	display: flex;
+	align-items: center;
+	font-size: 1.35rem;
+}
+
+.top-selling > ul > li > div:first-child > div{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.top-selling > ul > li > div > span{
+	margin-right: 1rem;
+	font-weight: bolder;
+}
+
+.top-selling > ul > li > div:first-child > div > span{
+	font-weight: bolder;
+}
+
+.top-selling > ul > li > div:first-child > img{
+	height: 8rem;
+	width: 12rem;
+	min-width: 10rem;
+	margin-right: 1rem;
+	object-fit: cover;
+}
+
+/************************Media Query************************/
+
+/*Laptop*/
+@media (max-width: 1024px){
+
+}
+
+/*Tablet*/
+@media (max-width: 992px){
+	
+}
+
+/*Mobile*/
+@media (max-width: 480px){
+	
+}

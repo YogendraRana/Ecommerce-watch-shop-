@@ -1,0 +1,122 @@
+.dashboard-container{
+	height: 100%;
+	width: 100%;
+	padding: 0 1rem 1rem 1rem;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid var(--dark-light);
+}
+
+/************************Dashboard Heading*************************/
+.dashboard-container > .dashboard-heading{
+	height: 8rem;
+	min-height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-container > .dashboard-heading > h2{
+	font-size: 1.8rem;
+	font-size: bolder;
+}
+
+/*************************Dashboard*************************/
+.dashboard-container > .dashboard{
+	height: 100%;
+	width: 100%;
+}
+
+.dashboard-container > .dashboard > .information{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+
+.dashboard-container > .dashboard > .information > .charts{
+	width: 100%;
+	margin-bottom: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+/************************Media Query************************/
+
+/*Laptop*/
+@media (max-width: 1024px){
+
+}
+
+/*Tablet*/
+@media (max-width: 992px){
+		.dashboard-container > .dashboard > .information > .charts > .bar-graph{
+		width: 60%;
+		padding: 0.25rem;
+	}
+
+	.dashboard-container > .dashboard > .information > .charts > .pie-graph{
+		width: 40%;
+		padding: 0.25rem;
+	}
+}
+
+/*Mobile*/
+@media (max-width: 480px){
+	.dashboard-container > .dashboard > .information > .featured-info{
+		flex-wrap: wrap;
+	}
+
+	.dashboard-container > .dashboard > .information > .featured-info > div{
+		width: 30%;
+		margin-bottom: 1rem;
+	}
+
+	.dashboard-container > .dashboard > .information > .charts{
+		flex-wrap: wrap;
+	}
+
+	.dashboard-container > .dashboard > .information > .charts > .bar-graph,
+	.dashboard-container > .dashboard > .information > .charts > .pie-graph{
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 1rem;
+	}
+
+	.dashboard-container > .dashboard > .information > .top-selling > ul > li{
+		flex-wrap: wrap;
+	}
+
+	.dashboard-container > .dashboard > .information > .top-selling > ul > li > div:first-child{
+		width: 100%;
+		align-items: flex-start;
+		margin-bottom: 1rem;
+	}
+
+	.dashboard-container > .dashboard > .information > .top-selling > ul > li > div:first-child > img{
+		width: 20rem;
+		margin-right: 0.5rem;
+	}
+
+	.dashboard-container > .dashboard > .information > .top-selling > ul > li > div:first-child > div{
+		justify-content: center;
+		align-items: center;
+		border: 1px solid #ededed;
+	}
+
+	.dashboard-container > .dashboard > .information > .top-selling > ul > li > div > span{
+		margin-right: 0.25rem;
+	}
+
+	.dashboard-container > .dashboard > .information > .top-selling > ul > li > div:nth-child(2),
+	.dashboard-container > .dashboard > .information > .top-selling > ul > li > div:nth-child(3),
+	.dashboard-container > .dashboard > .information > .top-selling > ul > li > div:nth-child(4){
+		width: 33%;
+		padding: 1rem;
+	}
+
+}

@@ -1,0 +1,61 @@
+.carousel{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	transition: all 0.4s cubic-bezier(0.68, -0.55,0.265, 1.55);
+}
+
+.carousel > img{
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
+	object-fit: cover;
+	animation: fade 1.5s;
+}
+
+.carousel > .actions-indicators{
+	position: absolute;
+	color: white;
+	bottom: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.carousel > .actions-indicators > i{
+	font-size: 1.75rem;
+	cursor: pointer;
+}
+
+.carousel > .actions-indicators > i.fa-chevron-left{
+	margin-right: 2rem;
+}
+
+.carousel > .actions-indicators > i.fa-chevron-right{
+	margin-left: 2rem;
+}
+
+.carousel > .actions-indicators > .dots{
+	display: flex;
+}
+
+.carousel > .actions-indicators > .dots > .dot{
+	height: 1rem;
+	width: 1rem;
+	margin-right: 1rem;
+	cursor: pointer;
+	border: 1px solid white;
+	border-radius: 50%;
+}
+
+.carousel > .actions-indicators > .dots > .dot:last-child{
+	margin-right: 0;
+}
+
+@keyframes fade{
+	from{opacity: 0.4}
+	to{opacity: 1}
+}

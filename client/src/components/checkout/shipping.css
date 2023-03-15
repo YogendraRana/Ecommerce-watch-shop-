@@ -1,0 +1,89 @@
+.shipping-container{
+	height: 100%;
+	width: 100%;
+}
+
+.shipping-container > form{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.shipping-container > form > .row-1,
+.shipping-container > form > .row-2{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.shipping-container > form > .row-1 > div,
+.shipping-container > form > .row-2 > div{
+	width: 49.5%;
+	margin-bottom: 2rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.shipping-container > form > .row-1 > div > label,
+.shipping-container > form > .row-2 > div > label{
+	margin-bottom: 0.75rem;
+	font-size: 1.5rem;
+}
+
+.shipping-container > form > .row-1 > div > input,
+.shipping-container > form > .row-2 > div > input,
+.shipping-container > form > .row-2 > div > select{
+	padding: 1rem;
+	border: 1px solid #ededed;
+}
+
+.shipping-container > form > .row-1 > div > input:focus::placeholder,
+.shipping-container > form > .row-2 > div > input:focus::placeholder{
+	opacity: 0;
+	transition: all 0.1s;
+}
+
+.shipping-container > form > div.shipping-btns{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.shipping-container > form > div.shipping-btns > button{
+	height: 4.5rem;
+	width: 12rem;
+	border-radius: 5px;
+	cursor: pointer;
+	color: white;
+	background-color: black;
+	font-size: 1.25rem;
+	display: inline-block;
+}
+
+.shipping-container > form > div.shipping-btns > button:hover{
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	transition: all 0.2s ease-in;
+}
+
+/************************Media Query************************/
+
+/*Laptop Screen*/
+@media (max-width: 1380px){
+	
+}
+
+/*Tablet Screen*/
+@media (max-width: 992px){
+	
+}
+
+/*Mobile Screen*/
+@media (max-width: 480px){
+	.shipping-container > form > .row-1 > div,
+	.shipping-container > form > .row-2 > div{
+		width: 100%;
+	}
+	
+}

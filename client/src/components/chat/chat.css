@@ -1,0 +1,212 @@
+.chat-section{
+    height: calc(100vh - var(--nav-height) - var(--padding));
+    width: 100%; 
+    padding: 0 var(--padding);
+}
+
+.chat-section > .chat-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+/******************************Chat Participants****************************/
+.chat-section > .chat-container > .chat-participants{
+    width: 25%;
+    border: 1px solid #b2beb5;
+}
+
+.chat-section > .chat-container > .chat-participants > .participants-heading{
+    height: 6rem;
+    max-height: 6rem;
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #b2beb5;
+    font-size: 2.5rem;
+}
+
+.chat-section > .chat-container > .chat-participants > .participants{
+    height: 100%;
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/******************************Specific Chat- Chat Box****************************/
+.chat-section > .chat-container > .chat-box{
+    height: 100%;
+    width: 100%;
+    border: 1px solid #b2beb5;
+    border-left: none;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+/******************************Specific Chat- Chat Heading****************************/
+.chat-section > .chat-container > .chat-box > .chat-heading{
+    height: 6rem;
+    max-height: 6rem;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #b2beb5;
+    font-size: 2.5rem;
+}
+
+.chat-section > .chat-container > .chat-box > .chat-heading > .chat-intro{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.chat-section > .chat-container > .chat-box > .chat-heading > .chat-intro > img{
+    height: 4rem;
+    width: 4rem;
+    min-width: 4rem;
+    margin-right: 1rem;
+    padding: 0.25rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border:1px solid black;
+}
+
+.chat-section > .chat-container > .chat-box > .chat-heading > .chat-intro > span{
+    font-size: 2rem;
+}
+
+.chat-section > .chat-container > .chat-box > .chat-heading > .chat-options{
+    /*Some CSS*/
+}
+
+.chat-section > .chat-container > .chat-box > .chat-heading > .chat-options > i{
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+    background-color: #ededed;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+.chat-section > .chat-container > .chat-box > .chat-heading > .chat-options > i:last-child{
+    margin-right: 0;
+}
+
+.chat-section > .chat-container > .chat-box > .chat-heading > .chat-options > i:hover{
+    background-color: #b2beb5;
+}
+
+
+/******************************Specific Chat- Chat Feed****************************/
+.chat-section > .chat-container > .chat-box > .chat-feed{
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.chat-section > .chat-container > .chat-box > .chat-feed > .no-chat,
+.chat-section > .chat-container > .chat-box > .chat-feed > .no-message{
+    height: 100%;
+    width: 100%;
+    font-size: 1.5rem;
+    display: grid;
+    place-items: center;
+}
+
+/******************************Specific Chat- Chat Input****************************/
+.chat-section > .chat-container > .chat-box > .chat-input{
+    width: 95%;
+    margin: 1rem auto 1rem;
+    padding: 0.25rem;
+    border: 1px solid #b2beb5;
+    border-radius: 50rem;
+    display: flex;
+    align-items: center;
+}
+
+.chat-section > .chat-container > .chat-box > .chat-input > div,
+.chat-section > .chat-container > .chat-box > .chat-input > button{
+    height: 3rem;
+    width: 3rem;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.chat-section > .chat-container > .chat-box > .chat-input > div.input-text{
+    height: 100%;
+    width: 100%;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    border-radius: 50rem;
+}
+
+.chat-section > .chat-container > .chat-box > .chat-input > div.input-text > input{
+    height: 100%;
+    width: 100%;
+    padding-left: 2rem;
+}
+
+.chat-section > .chat-container > .chat-box > .chat-input > div.input-audio{
+    margin-right: 1rem;
+}
+
+.chat-section > .chat-container > .chat-box > .chat-input > div.input-audio > i,
+.chat-section > .chat-container > .chat-box > .chat-input > div.input-image > label > i{
+    font-size: 1.75rem;
+}
+
+.chat-section > .chat-container > .chat-box > .chat-input > div.input-image{
+    margin-right: 1rem;
+}
+
+.chat-section > .chat-container > .chat-box > .chat-input > div.input-image > label{
+    cursor: pointer;
+}
+
+.chat-section > .chat-container > .chat-box > .chat-input > button.send-btn{
+    height: 100%;
+    width: 10rem;
+    padding: 1rem;
+    background-color: #24252A;
+    color: white;
+    border-radius: 50rem;
+}
+
+
+/*******************************Media Query*******************************/
+
+/*Laptop Screen*/
+@media(max-width: 1380px){
+
+}
+
+/*Tablet Screen*/
+@media(max-width: 992){
+    
+}
+
+/*Mobile Screen*/
+@media(max-width: 480px){
+    .chat-section > .chat-container > .chat-participants{
+        width: auto;
+    }
+
+    .chat-section > .chat-container > .chat-participants > .participants{
+        align-items: center;
+    }
+}

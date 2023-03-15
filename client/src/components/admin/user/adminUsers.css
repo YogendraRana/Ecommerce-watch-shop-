@@ -1,0 +1,134 @@
+.users-container{
+	height: 100%;
+	width: 100%;
+	padding: 0 1rem 1rem 1rem;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid var(--dark-light);
+}
+
+/************************Users Heading*************************/
+.users-container > .users-heading{
+	height: 8rem;
+	min-height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.users-container > .users-heading > h2{
+	font-size: 1.8rem;
+	font-size: bolder;
+}
+
+/*************************Users*************************/
+.users-container > .users{
+	height: 100%;
+	width: 100%;
+}
+
+.users-container > .users > ul{
+	height: 100%;
+	width: 100%;
+	border: 1px solid var(--dark-light);	
+}
+
+.users-container > .users > ul > li{
+	width: 100%;
+	padding: 0.25rem 0.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	overflow: hidden;
+	border-bottom: 1px solid var(--dark-light);
+}
+
+.users-container > .users > ul > li:not(:last-child){
+	margin-bottom: 0.25rem;
+}
+
+
+.users-container > .users > ul > li > div{
+	width: 20%;
+	display: flex;
+	align-items: center;
+	font-size: 1.35rem;
+/*	border: 1px solid black;*/
+}
+
+.users-container > .users > ul > li > div:last-child{
+	width: auto;
+}
+
+.users-container > .users > ul > li > div > span{
+	margin-right: 0.5rem;
+	font-weight: bolder;
+}
+
+.users-container > .users > ul > li > div > p{
+	overflow-wrap: break-word;
+}
+
+
+.users-container > .users > ul > li > .actions > i{
+	height: 3rem;
+	width: 3rem;
+	font-size: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid var(--dark-light);
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.users-container > .users > ul > li > .actions > i:hover{
+	background-color: #24252a;
+	color: white;
+	transition: all 0.2s ease-in;
+}
+
+
+/************************Media Query************************/
+
+/************************Media Query************************/
+
+/*Laptop*/
+@media (max-width: 1024px){
+
+}
+
+/*Tablet*/
+@media (max-width: 992px){
+	.users-container> .users > ul > li > div:not(:last-child){		
+		width: 25%;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.users-container> .users > ul > li > div:nth-child(2),
+	.users-container> .users > ul > li > div:nth-child(3),
+	.users-container> .users > ul > li > div:nth-child(4){
+		width: 15%;
+	}
+}
+
+/*Mobile*/
+@media (max-width: 480px){
+	.users-container> .users > ul > li{
+		flex-wrap: wrap;
+	}
+
+	.users-container> .users > ul > li > div:first-child{
+		width: 100%;
+		margin-bottom: 2rem;
+		padding: 0.5rem;
+		border: 1px solid #ededed;
+	}
+
+	.users-container> .users > ul > li > div:nth-child(3){
+		width: 30%;
+	}
+
+}

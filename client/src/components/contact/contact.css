@@ -1,0 +1,166 @@
+.contact-section{
+	height: calc(100vh - var(--nav-height) - var(--padding));
+	width: 100%; 
+	padding: 0 var(--padding);
+}
+
+.contact-section > .contact-container{
+	height: 100%;
+	width: 100%;
+	background-color: #ededed;
+	display: flex;
+}
+
+/**************************************Contact Left Column****************************************/
+.contact-section > .contact-container > .left-column{
+	height: 100%;	
+	width: 50%;	
+	padding: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contact-section > .contact-container > .left-column > form{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.contact-section > .contact-container > .left-column > form > h3{
+	margin-bottom: 2rem;
+	font-size: 2rem;
+	text-transform: uppercase;
+}
+
+.contact-section > .contact-container > .left-column > form > input,
+.contact-section > .contact-container > .left-column > form > textarea{
+	width: 60%;
+	margin-bottom: 2rem;
+	padding: 1rem;
+	border-radius: 5px;
+	background: white;
+	color: #24252a;	
+}
+
+.contact-section > .contact-container > .left-column > form > textarea{
+	height: 12rem;
+	margin-top: 2.5rem;
+}
+
+.contact-section > .contact-container > .left-column > form  > .submit-btn{
+	margin-top: 3rem;
+	padding: 1rem 3rem;
+	cursor: pointer;
+	border: 1px solid #b2beb5;
+	border-radius: 5rem;
+}
+
+.contact-section > .contact-container > .left-column > form > .submit-btn:hover{
+	background: #24252a;
+	color: white;
+	transition: 0.2s ease-in-out;
+}
+
+
+/**************************************Contact Right Column****************************************/
+.contact-section > .contact-container > .right-column{
+	height: 100%;
+	padding: 2rem;
+	width: 50%;	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: black;
+}
+
+.contact-section > .contact-container > .right-column > .contact-info{
+	height: 100%;
+	width: 100%;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #b2beb5
+}
+
+.contact-section > .contact-container > .right-column > .contact-info > .info-card{
+	width: 18rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.contact-section > .contact-container > .right-column > .contact-info > .info-card:not(:last-child){
+	margin-bottom: 3rem;
+}
+
+.contact-section > .contact-container > .right-column > .contact-info > .info-card > .info-topic{
+	padding: 1rem 0;
+	display: flex;
+	align-items: center;
+}
+
+.contact-section > .contact-container > .right-column > .contact-info > .info-card > .info-topic > i{
+	font-size: 1.5rem;
+	margin-right: 1.5rem;
+}
+
+.contact-section > .contact-container > .right-column > .contact-info > .info-card > .info-topic > span{
+	font-size: 1.5rem;
+	align-self: center;
+	font-weight: 800;
+}
+
+.contact-section > .contact-container > .right-column > .contact-info > .info-card > .info{
+	font-size: 1.5rem;
+}
+
+
+/****************************************************Media Query****************************************/
+
+/*Laptop Screen*/
+@media (max-width: 1024px){
+
+	.contact-section > .contact-container > .left-column > form > input,
+	.contact-section > .contact-container > .left-column > form > textarea{
+		width: 90%;
+	}
+
+	.contact-section > .contact-container > .right-column > .contact-info{
+		height: 70%;
+		width: 70%;
+	}
+}
+
+/*Tablet Screen*/
+@media (max-width: 992px){
+	.contact-section{
+		height: auto;
+	}
+	
+	.contact-section > .contact-container{
+		flex-direction: column;
+	}  
+
+	.contact-section > .contact-container > .left-column,
+	.contact-section > .contact-container > .right-column{
+		width: 100%;
+	}
+
+	.contact-section > .contact-container > .left-column > form > input,
+	.contact-section > .contact-container > .left-column > form > textarea{
+		width: 70%;
+	}
+}
+
+/*Mobile Screen*/
+@media (max-width: 480px){
+	.contact-section > .contact-container > .left-column > form > input,
+	.contact-section > .contact-container > .left-column > form > textarea{
+		width: 90%;
+	}
+}

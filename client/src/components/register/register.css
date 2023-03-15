@@ -1,0 +1,130 @@
+.register-section{
+  height: calc(100vh - var(--nav-height) - var(--padding));
+  width: 100%; 
+  padding: 0 var(--padding);
+}
+
+.register-section > .register-form{
+  height: 100%;
+  width: 100%;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  border: 1px solid #ededed;
+  transition: transform 1.2s ease-in-out;
+}
+
+.register-section > .register-form > div{
+  width: 45rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.register-section > .register-form > div:last-child{
+  margin-bottom: 0;
+}
+
+.register-section > .register-form > div > h2{
+  width: 100%;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.register-section > .register-form > div > i{
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+}
+
+
+.register-section > .register-form > div > input{
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.4rem;
+  text-align: center;
+  border: 1px solid #ededed;
+  border-radius: 5px;
+}
+
+.register-section > .register-form > div > input::placeholder{
+  font-size: 1.4rem;
+}
+
+.register-section > .register-form > div > input:focus::placeholder{
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.register-section > .register-form > div > .name-error,
+.register-section > .register-form > div > .email-error,
+.register-section > .register-form > div > .password-error,
+.register-section > .register-form > div > .cpassword-error{
+  margin-top: 1rem;
+  color: red;
+}
+
+.register-section > .register-form > div > button{
+  padding: 1rem 4rem;
+  display: block;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  background: -webkit-linear-gradient(left, #b224ef, #7579ff);
+  color: var(--primary-color);
+  box-shadow:  0 0 10px rgba(1, 1, 1, 0.5);
+}
+
+.register-section > .register-form > button:hover{
+  background: -webkit-linear-gradient(left, #7579ff, #b224ef);
+}
+
+.register-section > .register-form > p{
+  font-size: 1.4rem;
+}
+
+.register-section > .register-form > .log-in-link{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+}
+
+.register-section > .register-form > .log-in-link > p{
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.register-section > .register-form > .log-in-link > a{
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  color:  black;
+  cursor: pointer;
+  border: 1px solid #24252a;
+  border-radius: 50px;
+  transition: all 0.1s ease-in-out;
+}
+
+/*************************************Responsive Code****************************************/
+
+/*Laptop Screen*/
+@media (max-width: 1024px){
+
+}
+
+/*Tablet Screen*/
+@media (max-width: 992px){
+  .register-section{
+    height: auto;
+  }
+}
+
+/*Mobile Screen*/
+@media (max-width: 480px){
+  .register-section > .register-form > div{
+    width: 35rem;
+  }
+}

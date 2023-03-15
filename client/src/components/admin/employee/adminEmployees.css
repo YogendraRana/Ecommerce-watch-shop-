@@ -1,0 +1,154 @@
+.employees-container{
+	height: 100%;
+	width: 100%;
+	padding: 0 1rem 1rem 1rem;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid var(--dark-light);
+}
+
+/*************************Employee Heading*************************/
+.employees-container > .employees-heading{
+	height: 8rem;
+	min-height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.employees-container > .employees-heading > h2{
+	font-size: 1.8rem;
+	font-size: bolder;
+}
+
+.employees-container > .employees-heading > div{
+	padding: 1rem 1.5rem;
+	border: 1px solid #b2beb5;
+	border-radius: 5px;
+	font-size: 1.25rem;
+	cursor: pointer;
+}
+
+.employees-container > .employees-heading > div:hover{
+	background: rgba(1, 1, 1, 0.25);
+	transition: all 0.1s ease-in;
+}
+
+.employees-container > .employees-heading > div > i{
+	margin-right: 1rem;
+}
+
+/*************************Product Container*************************/
+.employees-container > .employees{
+	height: 100%;
+	width: 100%;
+}
+
+.employees-container > .employees > ul{
+	height: 100%;
+	width: 100%;
+	border: 1px solid var(--dark-light);	
+}
+
+.employees-container > .employees > ul > li{
+	width: 100%;
+	padding: 0.25rem 0.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	overflow: hidden;
+	border-bottom: 1px solid var(--dark-light);
+}
+
+.employees-container > .employees > ul > li:not(:last-child){
+	margin-bottom: 0.25rem;
+}
+
+
+.employees-container > .employees > ul > li > div{
+	width: 20%;
+	display: flex;
+	font-size: 1.35rem;
+}
+
+.employees-container > .employees > ul > li > div:last-child{
+	width: auto;
+}
+
+.employees-container > .employees > ul > li > div > span{
+	margin-right: 0.5rem;
+	font-weight: bolder;
+}
+
+.employees-container > .employees > ul > li > div > p{
+	width: 100%;
+	overflow-wrap: word-break;
+}
+
+.employees-container > .employees > ul > li > .actions > div{
+	display: flex;
+}
+
+.employees-container > .employees > ul > li > .actions > div > i{
+	height: 3rem;
+	width: 3rem;
+	font-size: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid var(--dark-light);
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.employees-container > .employees > ul > li > .actions > div > i:hover{
+	background-color: #24252a;
+	color: white;
+	transition: all 0.2s ease-in;
+}
+
+.employees-container > .employees > ul > li > .actions > div > i:not(:last-child){
+	margin: 0 0.5rem;
+}
+
+/************************Media Query************************/
+
+/*Laptop*/
+@media (max-width: 1024px){
+
+}
+
+/*Tablet*/
+@media (max-width: 992px){
+	.employees-container > .employees > ul > li > div:not(:last-child){		
+		width: 25%;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.employees-container > .employees > ul > li > div:nth-child(2),
+	.employees-container > .employees > ul > li > div:nth-child(3),
+	.employees-container > .employees > ul > li > div:nth-child(4){
+		width: 15%;
+	}
+}
+
+/*Mobile*/
+@media (max-width: 480px){
+	.employees-container > .employees > ul > li{
+		flex-wrap: wrap;
+	}
+
+	.employees-container > .employees > ul > li > div:first-child{
+		width: 100%;
+		margin-bottom: 2rem;
+		padding: 0.5rem;
+		border: 1px solid #ededed;
+	}
+
+	.employees-container > .employees > ul > li > div:nth-child(3){
+		width: 30%;
+	}
+
+}

@@ -1,0 +1,271 @@
+.profile-container{
+	width: 100%; 
+	padding: 0 var(--padding);
+	display: flex;
+	flex-direction: column;
+}
+
+.profile-container > .user-info{
+	width: 100%;
+	padding: 0.5rem;
+	display: flex;
+	border: 1px solid #ededed;
+}
+
+.profile-container > .user-info > img{
+	height: 15rem;
+	min-height: 15rem;
+	width: 15rem;
+	min-width: 15rem;
+	margin-right: 0.5rem;
+	object-fit: cover;
+}
+
+.profile-container > .user-info > .profile-info{
+	width: 100%;
+	padding: 0.75rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 1px solid #ededed;
+}
+
+.profile-container > .user-info > .profile-info > .profile-information{
+	display: flex;
+	justify-content: space-between;
+}
+
+.profile-container > .user-info > .profile-info > .profile-information > div{
+	width: 25%;
+	margin-right: 1rem;
+	margin-bottom: 1rem;
+	padding: 0.75rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	font-size: 1.25rem;
+}
+
+.profile-container > .user-info > .profile-info > .profile-information > div:last-child{margin-right: 0}
+
+.profile-container > .user-info > .profile-info > .profile-information > div > span{
+	margin-bottom: 0.5rem;
+	font-size: 1.5rem;
+	font-weight: bolder;
+}
+
+.profile-container > .user-info > .profile-info > .profile-information > div > input{
+	width: 100%;
+	padding: 0.75rem;
+	border: 1px solid #ededed;
+}
+
+.profile-container > .user-info > .profile-info > .profile-buttons{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.profile-container > .user-info > .profile-info > .profile-buttons > button,
+.profile-container > .user-info > .profile-info > .profile-buttons > a{
+	height: 4rem;
+	width: 12rem;
+	margin-right: 1rem;
+	cursor: pointer;
+	color: black;
+	font-size: 1.25rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	box-shadow: 0 0 2.5px #b2beb5;
+	background-color: #ededed;
+}
+
+.profile-container > .user-info > .profile-info > .profile-buttons > button:hover,
+.profile-container > .user-info > .profile-info > .profile-buttons > a:hover{
+	background-color: #b2beb5;
+	transition: all 0.2s ease-in;
+}
+
+.profile-container > .user-info > .profile-info > .profile-buttons > button:last-child{
+	margin-right: 0;
+	background-color: black;
+	color: white;
+}
+
+/**********************Order Info / Wishlist Info************************/
+.profile-container > .order-info,
+.profile-container > .wishlist-info{
+	margin: 1rem 0;
+	width: 100%;
+} 
+
+.profile-container > .order-info > h1,
+.profile-container > .wishlist-info > h1{
+	padding: 2rem 0 1rem 0;
+	font-size: 1.8rem;
+}
+
+.profile-container > .order-info > .orders{
+	border: 1px solid #ededed;
+}
+
+.profile-container > .order-info > .orders,
+.profile-container > .wishlist-info > .wishes{
+	
+}
+
+.profile-container > .order-info > .orders > li,
+.profile-container > .wishlist-info > .wishes > li{
+	border-bottom: 1px solid #ededed;
+}
+
+.profile-container > .order-info > .orders > li:last-child{
+	border-bottom: none;
+}
+
+
+/**************************Wishlist**************************/
+.profile-container > .wishlist-info > .wishes {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.profile-container > .wishlist-info > .wishes > li{
+	height: 8rem;
+	width: calc(50% - 0.25rem);
+	margin-bottom: 0.25rem;
+	padding: 0.25rem;
+	display: flex;
+	justify-content: space-between;
+	overflow: hidden;
+	border: 1px solid #ededed;	
+}
+
+.profile-container > .wishlist-info > .wishes > li > div{
+	width: 25%;
+	display: flex;
+	align-items: center;
+	font-size: 1.35rem;
+}
+
+.profile-container > .wishlist-info > .wishes > li > div > p{
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.profile-container > .wishlist-info > .wishes > li > div:last-child{
+	width: auto;
+}
+
+.profile-container > .wishlist-info > .wishes > li > div > img{
+	height: 100%;
+	width: 100%;
+	min-width: 15rem;
+	object-fit: cover;
+}
+
+.profile-container > .wishlist-info > .wishes > li > div.action{
+	/*Some CSS*/
+}
+
+.profile-container > .wishlist-info > .wishes > li > div.action > i{
+	height: 3rem;
+	width: 3rem;
+	margin-left: 1rem;
+	font-size: 1.25rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	border: 1px solid #ededed;
+	border-radius: 5px;	
+}
+
+.profile-container > .wishlist-info > .wishes > li > div.action > i:hover{
+	color: white;
+	background-color: black;
+	transition: all 0.2s ease-in;
+}
+
+.profile-container > .wishlist-info > .wishes > li > div.action > i:not(:last-child){
+	margin: 0 0.5rem;
+}
+
+
+/*****************No Order Available / No Wish Available****************/
+.profile-container > .order-info > .no-orders,
+.profile-container > .wishlist-info > .no-wishes{
+	height: 15rem;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #ededed;
+}
+
+.profile-container > .order-info > .no-orders > p,
+.profile-container > .wishlist-info > .no-wishes > p{
+	margin-bottom: 1rem;
+	font-size: 1.25rem;
+}
+
+.profile-container > .order-info > .no-orders > a,
+.profile-container > .wishlist-info > .no-wishes > a{
+	color: black;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	background: #ededed;
+}
+
+
+/*************************************Media Query****************************************/
+
+/*Laptop Screen*/
+@media (max-width: 1380px){
+
+}
+
+/*Tablet Screen*/
+@media (max-width: 992px){
+	.profile-container > .user-info > .profile-info > .profile-information{
+		flex-wrap: wrap;
+	}
+
+	.profile-container > .user-info > .profile-info > .profile-information > div{
+		width: calc(50% - 0.5rem);
+		margin-right: 0;
+	}
+
+ 	.profile-container > .wishlist-info > .wishes > li{
+		width: 100%;
+	}
+}
+
+/*Mobile Screen*/
+@media (max-width: 480px){
+	.profile-container > .user-info > .profile-info > .profile-information > div{
+		width: 100%;
+		margin-right: 0;
+	}
+
+	.profile-container > .user-info > .profile-info > .profile-buttons > button{
+		width: 100%;
+	}
+
+	.profile-container > .user-info > .profile-info > .profile-buttons > a{
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 1rem;
+	}
+
+	.profile-container > .wishlist-info > .wishes > li > div > img{
+		min-width: 8rem;
+	}
+}

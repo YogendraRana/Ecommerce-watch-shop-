@@ -1,0 +1,156 @@
+.hero-section{
+	height: calc(100vh - var(--nav-height) - 1.25rem);
+	width: 100%;
+	padding: 0 1.25rem;
+	margin-bottom: 2rem;
+}
+
+.hero-section > .hero-container{
+	height: 100%;
+	width: 100%;
+	padding: 0.5rem;
+	display: flex;
+	border: 1px solid #ededed;
+}
+
+/*********************************Home Left Col***********************************/
+.hero-section > .hero-container > .left-column{
+	height: 100%;
+	width: 50%;
+	padding: 0 5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	background-color: #ededed;
+}
+
+.hero-container > .left-column > .ribbon{
+	top: 0;
+	height: 12rem;
+	width: 8.5rem;
+	padding-top: 4rem;
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.55);
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0rem 0rem 5px rgba(0, 0, 0, 0.55);
+}
+
+.hero-section > .hero-container > .left-column > .ribbon > p,
+.hero-section > .hero-container > .left-column > .ribbon > span{
+	text-align: center;
+	font-size: 1.25rem;
+	color: white;
+}
+
+.hero-section > .hero-container > .left-column > .ribbon::before{
+	content: '';
+	height: 5rem;
+	width: 5rem;
+	position: absolute;
+	transform: rotate(45deg);
+	bottom: -2.5rem;
+	left: 0rem;
+	background-color: #ededed;
+}
+
+.hero-section > .hero-container > .left-column > .ribbon::after{
+	content: '';
+	height: 4rem;
+	width: 4rem;
+	position: absolute;
+	transform: rotate(45deg);
+	bottom: -2.5rem;
+	right: 0rem;
+	background-color: #ededed;
+}
+
+.hero-section > .hero-container > .left-column > .watch-info{
+	/*Some CSS*/
+}
+
+.hero-section > .hero-container > .left-column > .watch-info > h1{
+	margin-bottom: 2rem;
+	font-size: 3rem;
+	font-weight: bolder;
+}
+
+.hero-section > .hero-container > .left-column > .watch-info > p{
+	font-size: 1.5rem;
+	word-wrap: break-word;
+}
+
+.hero-section > .hero-container > .left-column > p{
+	padding: 2.5rem 0;
+	font-size: 1.5rem;
+}
+
+.hero-section > .hero-container > .left-column > p > span{
+	margin-right: 0.75rem;
+}
+
+.hero-section > .hero-container > .left-column > button{
+	height: 4.5rem;
+	width: 10rem;
+	background-color: #24252a;
+	color: white;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	box-shadow: 0 0 0.5rem #24252a;
+}
+
+/*********************************Home Right Col***********************************/
+.hero-section > .hero-container > .right-column{
+	height: 100%;
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hero-section > .hero-container > .right-column img{
+	height: 100%;
+	max-width: 100%;
+	object-fit: cover;
+}
+
+
+
+
+
+/************************Media Query************************/
+
+/*Laptop Screen*/
+@media (max-width: 1024px){
+	
+}
+
+/*Tablet Screen*/
+@media (max-width: 992px){
+	.hero-section > .hero-container{
+		flex-direction: column-reverse;
+	}
+
+	.hero-container > .left-column > .ribbon{
+		right: 10px;
+	}
+
+	.hero-section > .hero-container > .left-column{
+		height: 40%;
+		width: 100%;
+		margin-top: 0.5rem;
+	}
+
+	.hero-section > .hero-container > .right-column{
+		height: 60%;
+		width: 100%;
+	}
+}
+
+/*Mobile Screen*/
+@media (max-width: 480px){
+	.hero-container > .left-column > .ribbon{
+		display: none;
+	}
+}

@@ -1,0 +1,129 @@
+.login-section{
+  height: calc(100vh - var(--nav-height) - var(--padding));
+  width: 100%; 
+  padding: 0 var(--padding);
+}
+
+.login-section > .login-form{
+  height: 100%;
+  width: 100%;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  border: 1px solid #ededed;
+  transition: 1.2s ease-in-out;
+}
+
+.login-section > .login-form > div{
+  width: 45rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.login-section > .login-form > div:last-child{
+  margin-bottom: 0;
+}
+
+.login-section > .login-form > div > h2{
+  width: 100%;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.login-section > .login-form > div > input{
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.4rem;
+  text-align: center;
+  border: 1px solid #ededed;
+  border-radius: 5px;
+}
+
+.login-section > .login-form > div > input::placeholder{
+  font-size: 1.4rem;
+}
+
+.login-section > .login-form > div > input:focus::placeholder{
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.login-section > .login-form > div.remember-me{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.login-section > .login-form > div.remember-me > input{
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  box-shadow: none;
+}  
+
+.login-section > .login-form > div.remember-me > span{
+  font-size: 1.4rem;
+}
+
+.login-section > .login-form > div > button{
+  padding: 1rem 4rem;
+  display: block;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  background: -webkit-linear-gradient(left, #b224ef, #7579ff);
+  color: var(--primary-color);
+  box-shadow:  0 0 10px rgba(1, 1, 1, 0.5);
+}
+
+.login-section > .login-form > button:hover{
+  background: -webkit-linear-gradient(left, #7579ff, #b224ef);
+}
+
+.login-section > .login-form > div.forgot-password > a{
+  color: blue;
+  font-size: 1.4rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.login-section > .login-form > .register-link > p{
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.login-section > .login-form > .register-link > a{
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  color:  black;
+  cursor: pointer;
+  border: 1px solid #24252a;
+  border-radius: 50px;
+  transition: all 0.1s ease-in-out;
+}
+
+/*************************************Media Query****************************************/
+
+/*Laptop Screen*/
+@media (max-width: 1380px){
+
+}
+
+/*Tablet Screen*/
+@media (max-width: 992px){
+  .login-section{
+    height: auto;
+  }
+}
+
+/*Mobile Screen*/
+@media (max-width: 480px){
+  .login-section > .login-form > div{
+    width: 35rem;
+  }
+}

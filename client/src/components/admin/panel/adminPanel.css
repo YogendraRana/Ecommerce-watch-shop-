@@ -1,0 +1,130 @@
+.admin-panel{
+    min-height: calc(100vh - var(--nav-height));
+    width: 100%;
+    padding: 0 1.25rem;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+/*********************Admin Panel Sidebar****************************/
+
+.admin-panel > .admin-sidebar{
+    height: 100%;
+    width: 100%;
+    background-color: #ededed;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-panel > .admin-sidebar > .admin-sidebar-heading{
+    height: 8rem;
+    min-height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    background-color: rgba(1, 1, 1, 0.2);
+}
+
+.admin-panel > .admin-sidebar > ul{
+    height: 100%;
+    padding: 2rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-panel > .admin-sidebar > ul::-webkit-scrollbar{
+    height: 0.5rem;
+}
+
+.admin-panel > .admin-sidebar > ul::-webkit-scrollbar-thumb{
+    background-color: #b2beb5;
+}
+
+.admin-panel > .admin-sidebar > ul > li{
+    width: auto;
+    display: inline-block;
+    margin: 0 0 2rem 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.admin-panel > .admin-sidebar > ul > li.active{
+    border-right: 1px solid #b2beb5;
+}
+
+.admin-panel > .admin-sidebar > ul > li > i{
+    height: 3rem;
+    width: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    margin-right: 1rem;
+    font-size: 1.75rem;
+}
+
+.admin-panel > .admin-sidebar > ul > li > p{
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+
+/*********************Admin Panel Content**********************/
+.admin-panel > .admin-panel-content{
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ededed;
+}
+
+/************************Media Query************************/
+
+/*Laptop*/
+@media (max-width: 1024px){
+
+}
+
+/*Tablet*/
+@media (max-width: 992px){
+    .admin-panel{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .admin-panel > .admin-sidebar{
+        padding: 0.5rem;
+    }
+
+    .admin-panel > .admin-sidebar > ul{
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .admin-panel > .admin-sidebar > ul > li{
+        margin: 0 2rem 0 0 ;
+        display: flex;
+        align-items: center;
+    }
+
+    .admin-panel > .admin-sidebar > ul > li.active{
+        border-right: none;
+        border-bottom: 1px solid #b2beb5;
+    }
+}
+
+/*Mobile*/
+@media (max-width: 480px){
+    .admin-panel > .admin-sidebar > .admin-sidebar-heading{
+       display: none;
+    }
+
+    .admin-panel > .admin-sidebar > ul{
+        justify-content: flex-start;
+    }
+
+}

@@ -1,0 +1,78 @@
+.finish-order{
+	height: 100%;
+	width: 100%;
+	padding: 4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border: 1px solid #ededed;
+}
+
+.finish-order > i{
+	margin-bottom: 3rem;
+	padding: 2rem;
+	border: 2px solid #ededed;
+	border-radius: 50%;
+	border-color: green;
+}
+
+.finish-order > i.fa{
+	color: green;
+	font-size: 2rem;
+	font-weight: bolder;
+}
+
+.finish-order > p{
+	margin-bottom: 1rem;
+	font-size: 1.5rem;
+}
+
+.finish-order > p:nth-child(3){
+	font-size: 1.75rem;
+	font-weight: bolder;
+}
+
+.finish-order > div{
+	margin-top: 2rem;
+}
+
+.finish-order > div > a{
+	margin: 1rem;
+	padding: 1rem 2rem;
+	font-size: 1.25rem;
+	color: inherit;
+	border: 1px solid black;
+	border-radius: 0.5rem;
+}
+
+.finish-order > div > a:first-child{
+	margin-right: 0.5rem;
+}
+
+.finish-order > div > a:hover{
+	color: white;
+	background-color: black;
+	transition: all 0.2s ease-in-out;
+}
+
+/************************Media Query************************/
+
+/*Laptop Screen*/
+@media (max-width: 1380px){
+	
+}
+
+/*Tablet Screen*/
+@media (max-width: 992px){
+	
+}
+
+/*Mobile Screen*/
+@media (max-width: 480px){
+	.finish-order > div{
+		display: flex;
+		flex-direction: column;
+	}
+}
