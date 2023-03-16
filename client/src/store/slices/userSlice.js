@@ -5,7 +5,7 @@ export const registerUser = createAsyncThunk('user/registerUser', async (registe
   const {name, email, password, cpassword} = registerData;
 
   try{
-    const res = await fetch('https://mern-watch-shop-server.onrender.com/api/v1/register', {
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/register`, {
       method: 'POST', 
       body: JSON.stringify({name, email, password, cpassword}),
       headers: {
@@ -31,7 +31,7 @@ export const loginUser = createAsyncThunk('user/login', async (loginData, {rejec
   const {email, password} = loginData;
 
   try{
-    const res = await fetch('https://mern-watch-shop-server.onrender.com/api/v1/login', {
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/login`, {
       method: 'POST', 
       body: JSON.stringify({email, password}),
       headers: {
@@ -56,7 +56,7 @@ export const loginUser = createAsyncThunk('user/login', async (loginData, {rejec
 //getUserDetail thunk
 export const getUserDetail = createAsyncThunk('user/detail', async (userData, {rejectWithValue, fulfillWithValue}) => {
   try{
-    const res = await fetch('https://mern-watch-shop-server.onrender.com/api/v1/profile', {credentials: 'include'});
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/profile`, {credentials: 'include'});
 
     const data = await res.json();
 
@@ -75,7 +75,7 @@ export const getUserDetail = createAsyncThunk('user/detail', async (userData, {r
 // user detail thunk 
 export const logoutUser = createAsyncThunk('user/logout', async (logoutData, {rejectWithValue, fulfillWithValue}) => {
   try{
-    const res = await fetch('https://mern-watch-shop-server.onrender.com/api/v1/logout');
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/logout`);
 
     const data = await res.json();
 

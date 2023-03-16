@@ -3,7 +3,7 @@ import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 // register subscription
 export const registerSubscriber = createAsyncThunk('user/subscribe', async (email,  {rejectWithValue, fulfillWithValue}) => {
   try{
-    const res = await fetch('https://mern-watch-shop-server.onrender.com/api/v1/subscribe', {
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/subscribe`, {
       method: 'POST', 
       body: JSON.stringify({email}),
       headers: {

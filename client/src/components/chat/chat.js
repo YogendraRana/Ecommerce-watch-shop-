@@ -29,7 +29,7 @@ const Chat = () => {
 	const {user} = useSelector(state => state.user);
 
 	useEffect(() => {
-		socket.current = io('https://mern-watch-shop-server.onrender.com');
+		socket.current = io(`${process.env.REACT_APP_SERVER_URL}`);
 		socket.current.on('get-message', data => {
 			setArrivalMessage({
 				chat: data.chatId,
@@ -58,7 +58,7 @@ const Chat = () => {
 	useEffect(() => {
 		const getChats = async () => {
 			try{
-			    const res = await fetch(`https://mern-watch-shop-client.onrender.com/api/v1/chat/${user._id}`);
+			    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/chat/${user._id}`);
 			    const data = await res.json();
 			    setChats(data.chats);
 			}catch(err){
@@ -76,7 +76,7 @@ const Chat = () => {
 			try{
 				if(currentChat === null) return;
 
-				const res = await fetch(`https://mern-watch-shop-client.onrender.com/api/v1/messages/${currentChat?._id}`);
+				const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/messages/${currentChat?._id}`);
 				const data = await res.json();
 				setCurrentMessages(data.chatMessages);
 				setGetChatLoading(false);
@@ -108,7 +108,7 @@ const Chat = () => {
 		});
 
 		try{
-			const res = await fetch('https://mern-watch-shop-client.onrender.com/api/v1/message/new', {
+			const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/message/new`, {
 				method: 'POST',
 				body: JSON.stringify(message),
 				headers:{

@@ -51,7 +51,7 @@ const Home = () => {
     useEffect(() => {
         const getRecommendations = async () => {
             try{
-                const res = await fetch('https://mern-watch-shop-server.onrender.com/api/v1/products/recommendation');
+                const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/products/recommendation`);
                 const data = await res.json();
                 setNewArrivals(data.newArrivals);
                 setHighestRated(data.highestRated);
