@@ -128,10 +128,8 @@ module.exports.forgotPassword = async (req, res, next) => {
 
 	const randomToken = await user.getResetPasswordToken();
 	await user.save({validateBeforeSave: false});
-
-	// const resetPasswordUrl = `${process.env.FRONTEND_URL}://${req.get('host')}/password/reset/${randomToken}`;
-	// const resetPasswordUrl = `${req.protocol}://${req.get('host')}/password/reset/${randomToken}`;
-	const resetPasswordUrl = `http://localhost:3000/password/reset/${randomToken}`;
+	
+	const resetPasswordUrl = `${req.protocol}://${req.get('host')}/password/reset/${randomToken}`;
 	const message = `Click on the given link to reset password: ${resetPasswordUrl}\n\nPlease ignore the message if you did not request this email`;
 
 	try{	

@@ -25,7 +25,8 @@ const messageRoutes = require('./routes/messageRoutes');
 const app = express();
 
 //configure dotenv file
-dotenv.config({path: './config.env'});
+//i can remove it if i manually set all env variables in render.com
+dotenv.config({path: './config.env'}); 
 
 //variables
 const PORT = process.env.PORT || 8000;
@@ -34,9 +35,7 @@ const DATABASE = process.env.DATABASE
 //middleware
 app.use(express.json({limit: '50mb'}));
 app.use(cookieParser());
-app.use(cors({
-  origin: process.env.CLIENT_URL,
-}));
+app.use(cors({origin: process.env.CLIENT_URL}));
 
 //database and server connection
 mongoose.connect(DATABASE, {useNewUrlParser: true, useUnifiedTopology: true})
@@ -45,9 +44,9 @@ mongoose.connect(DATABASE, {useNewUrlParser: true, useUnifiedTopology: true})
 
 //cloudinary 
 cloudinary.config({ 
- cloud_name: process.env.CLOUDINARY_NAME, 
- api_key: process.env.CLOUDINARY_API_KEY, 
- api_secret: process.env.CLOUDINARY_API_SECRET 
+  cloud_name: process.env.CLOUDINARY_NAME, 
+  api_key: process.env.CLOUDINARY_API_KEY, 
+  api_secret: process.env.CLOUDINARY_API_SECRET 
 });
 
 // socket.io
