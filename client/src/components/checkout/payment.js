@@ -54,7 +54,7 @@ const Payment = ({grandTotal, prevStep, nextStep}) => {
 				return;
 			};
 
-			const res = await fetch(`${REACT_APP_SERVER_URL}/payment/process`, {
+			const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/payment/process`, {
 				method: 'POST',
 				body: JSON.stringify({amount: grandTotal, email: user.email}),
 				headers: {
