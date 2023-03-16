@@ -54,7 +54,7 @@ const Payment = ({grandTotal, prevStep, nextStep}) => {
 				return;
 			};
 
-			const res = await fetch('/payment/process', {
+			const res = await fetch('https://mern-watch-shop-client.onrender.com/payment/process', {
 				method: 'POST',
 				body: JSON.stringify({amount: grandTotal, email: user.email}),
 				headers: {

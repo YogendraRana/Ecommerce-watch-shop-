@@ -18,7 +18,7 @@ const Contact = () => {
         if(!name || !sender || !message) {return toast.warn("Fill all the required fields!")};
 
         try {   
-            const res = await fetch('/api/v1/send/email', {
+            const res = await fetch('https://mern-watch-shop-client.onrender.com/api/v1/send/email', {
                 method: 'POST', 
                 body: JSON.stringify({name, sender, subject, message}),
                 headers: {
