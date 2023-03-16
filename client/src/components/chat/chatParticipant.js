@@ -19,7 +19,7 @@ const ChatParticipant = ({chat, onlineUsers}) => {
 	useEffect(() => {
 		const getUser = async () => {
 			try{
-				const res = await fetch(`/api/v1/user/${otherParticipantId}`);
+				const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/user/${otherParticipantId}`);
 				const data = await res.json();
 				setOtherUser(data.user);
 				setLoading(false);	

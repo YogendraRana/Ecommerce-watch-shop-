@@ -3,7 +3,7 @@ import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 // getWishlist
 export const getWishlist = createAsyncThunk('user/wishlist/getWishlist', async (data, {rejectWithValue, fulfillWithValue}) => {
   try{
-    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/wishlist`, {method: 'GET'});
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/wishlist`, {method: 'GET'});
 
     const data = await res.json();
 
@@ -22,7 +22,7 @@ export const getWishlist = createAsyncThunk('user/wishlist/getWishlist', async (
 // addtoWishlist
 export const addToWishlist = createAsyncThunk('user/wishlist/addToWishlist', async (newWishProduct,  {rejectWithValue, fulfillWithValue}) => {
   try{
-    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/wishlist`, {
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/wishlist`, {
       method: 'POST', 
       body: JSON.stringify(newWishProduct),
       headers: {
@@ -46,7 +46,7 @@ export const addToWishlist = createAsyncThunk('user/wishlist/addToWishlist', asy
 // deleteFromWishlist
 export const deleteFromWishlist = createAsyncThunk('user/wishlist/deleteFromWishlist', async (id,  {rejectWithValue, fulfillWithValue}) => {
   try{
-    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/v1/wishlist`, {
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/wishlist`, {
       method: 'DELETE', 
       body: JSON.stringify({id}),
       headers: {

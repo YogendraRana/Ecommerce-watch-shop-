@@ -4,9 +4,9 @@ const {getWishlist, addToWishlist, deleteFromWishlist} = require('../controllers
 
 
 //wishlist routes
-router.get('/api/v1/wishlist', isAuthenticated, getWishlist);
-router.post('/api/v1/wishlist', isAuthenticated, addToWishlist);
-router.delete('/api/v1/wishlist', isAuthenticated, deleteFromWishlist);
+router.get('/wishlist', isAuthenticated, getWishlist);
+router.post('/wishlist', isAuthenticated, addToWishlist);
+router.delete('/wishlist', isAuthenticated, deleteFromWishlist);
 
 //export
 module.exports = router;

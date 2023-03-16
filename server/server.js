@@ -54,14 +54,14 @@ configSocket();
 
 //routes
 app.get('/', (req, res) => res.send("Home"));
-app.use(authRoutes);
-app.use(productRoutes);
-app.use(paymentRoute);
-app.use(orderRoutes);
-app.use(wishlistRoutes);
-app.use(subscriberRoutes);
-app.use(chatRoutes);
-app.use(messageRoutes);
+app.use('/api/v1', authRoutes);
+app.use('/api/v1', productRoutes);
+app.use('/api/v1', paymentRoute);
+app.use('/api/v1', orderRoutes);
+app.use('/api/v1', wishlistRoutes);
+app.use('/api/v1', subscriberRoutes);
+app.use('/api/v1', chatRoutes);
+app.use('/api/v1', messageRoutes);
 
 
 //error middleware

@@ -11,14 +11,14 @@ const {
 
 const router = Router();
 
-router.post('/api/v1/order/new', isAuthenticated, newOrder);
-router.get('/api/v1/order/:id', isAuthenticated, getSingleOrder);
-router.get('/api/v1/orders/me', isAuthenticated, myOrders);
+router.post('/order/new', isAuthenticated, newOrder);
+router.get('/order/:id', isAuthenticated, getSingleOrder);
+router.get('/orders/me', isAuthenticated, myOrders);
 
 //admin routes
-router.get('/api/v1/admin/orders', isAuthenticated, isAdmin('admin'), getAllOrders);
-router.put('/api/v1/admin/order/:id', isAuthenticated, isAdmin('admin'), updateOrder);
-router.delete('/api/v1/admin/order/:id', isAuthenticated, isAdmin('admin'), deleteOrder);
+router.get('/admin/orders', isAuthenticated, isAdmin('admin'), getAllOrders);
+router.put('/admin/order/:id', isAuthenticated, isAdmin('admin'), updateOrder);
+router.delete('/admin/order/:id', isAuthenticated, isAdmin('admin'), deleteOrder);
 
 //export routes
 module.exports = router

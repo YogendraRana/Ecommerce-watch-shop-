@@ -24,29 +24,29 @@ const {
 const router = Router();
 
 //auth routes
-router.post('/api/v1/register', registerUser);
-router.post('/api/v1/login', loginUser);
-router.post('/api/v1/password/forgot', forgotPassword);
-router.put('/api/v1/password/reset/:token', resetPassword)
-router.put('/api/v1/password/change', isAuthenticated, changePassword);
-router.get('/api/v1/logout', isAuthenticated, logoutUser);
-router.get('/api/v1/profile', isAuthenticated, getUserProfile);
-router.get('/api/v1/user/:userId', isAuthenticated, getUserDetail);
-router.put('/api/v1/profile/update', isAuthenticated, updateProfile);
-router.post('/api/v1/send/email', sendMailFromContact);
+router.post('/register', registerUser);
+router.post('/login', loginUser);
+router.post('/password/forgot', forgotPassword);
+router.put('/password/reset/:token', resetPassword)
+router.put('/password/change', isAuthenticated, changePassword);
+router.get('/logout', isAuthenticated, logoutUser);
+router.get('/profile', isAuthenticated, getUserProfile);
+router.get('/user/:userId', isAuthenticated, getUserDetail);
+router.put('/profile/update', isAuthenticated, updateProfile);
+router.post('/send/email', sendMailFromContact);
 
 
 //admin routes
 
-router.get('/api/v1/admin/users', isAuthenticated, isAdmin("admin"), getAllUsers);
-router.route('/api/v1/admin/users/:id').get(isAuthenticated, isAdmin("admin"), getSingleUser);
-router.route('/api/v1/admin/users/:id').put(isAuthenticated, isAdmin("admin"), updateUserRole);
-router.route('/api/v1/admin/users/:id').delete(isAuthenticated, isAdmin("admin"), deleteUser);
+router.get('/admin/users', isAuthenticated, isAdmin("admin"), getAllUsers);
+router.route('/admin/users/:id').get(isAuthenticated, isAdmin("admin"), getSingleUser);
+router.route('/admin/users/:id').put(isAuthenticated, isAdmin("admin"), updateUserRole);
+router.route('/admin/users/:id').delete(isAuthenticated, isAdmin("admin"), deleteUser);
 
-router.get('/api/v1/admin/employees', isAuthenticated, isAdmin("admin"), getEmployees);
-router.post('/api/v1/admin/employee/new', isAuthenticated, isAdmin('admin'), addEmployee);
-router.put('/api/v1/admin/employee/update', isAuthenticated, isAdmin('admin'), updateEmployee);
-router.delete('/api/v1/admin/employee/:id', isAuthenticated, isAdmin("admin"), deleteEmployee);
+router.get('/admin/employees', isAuthenticated, isAdmin("admin"), getEmployees);
+router.post('/admin/employee/new', isAuthenticated, isAdmin('admin'), addEmployee);
+router.put('/admin/employee/update', isAuthenticated, isAdmin('admin'), updateEmployee);
+router.delete('/admin/employee/:id', isAuthenticated, isAdmin("admin"), deleteEmployee);
 
 
 

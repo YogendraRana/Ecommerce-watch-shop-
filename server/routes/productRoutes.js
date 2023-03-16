@@ -14,17 +14,17 @@ const {
 } = require('../controllers/productControllers.js');
 
 //product routes
-router.get('/api/v1/products', getAllProducts);
-router.get('/api/v1/products/recommendation', getRecommendations);
-router.get('/api/v1/product/:id', getProductDetail);
-router.put('/api/v1/review', isAuthenticated, createProductReview);
-router.route('/api/v1/reviews').get(getProductReviews).delete(isAuthenticated, deleteReview);
+router.get('/products', getAllProducts);
+router.get('/products/recommendation', getRecommendations);
+router.get('/product/:id', getProductDetail);
+router.put('/review', isAuthenticated, createProductReview);
+router.route('/reviews').get(getProductReviews).delete(isAuthenticated, deleteReview);
 
 // admin routes
-router.get('/api/v1/admin/products', isAuthenticated, isAdmin('admin'), getAdminProducts);
-router.post('/api/v1/admin/product/new', isAuthenticated, isAdmin('admin'), addProduct);
-router.put('/api/v1/admin/product/:id', isAuthenticated, isAdmin('admin'), updateProduct);
-router.delete('/api/v1/admin/product/:id', isAuthenticated, isAdmin('admin'), deleteProduct);
+router.get('/admin/products', isAuthenticated, isAdmin('admin'), getAdminProducts);
+router.post('/admin/product/new', isAuthenticated, isAdmin('admin'), addProduct);
+router.put('/admin/product/:id', isAuthenticated, isAdmin('admin'), updateProduct);
+router.delete('/admin/product/:id', isAuthenticated, isAdmin('admin'), deleteProduct);
 
 //export
 module.exports = router
