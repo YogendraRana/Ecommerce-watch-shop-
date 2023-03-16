@@ -7,7 +7,7 @@ export const newReview = createAsyncThunk('review/create', async (reviewData,  {
 	let productId = id;
 
 	try{
-		const res = await fetch('/api/v1/review', {
+		const res = await fetch('https://mern-watch-shop-server.onrender.com/api/v1/review', {
 			method: 'PUT', 
 			body: JSON.stringify({rating, comment, productId}),
 			headers: {
@@ -31,7 +31,7 @@ export const newReview = createAsyncThunk('review/create', async (reviewData,  {
 export const getProductReviews = createAsyncThunk('review/productReviews', async ({rejectWithValue, fulfillWithValue}) => {
 
 	try{
-		const res = await fetch('/api/v1/reviews', {
+		const res = await fetch('https://mern-watch-shop-server.onrender.com/api/v1/reviews', {
 			method: 'GET',
 			headers: {'Content-Type': 'application/json'}
 		})

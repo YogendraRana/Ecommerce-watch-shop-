@@ -7,7 +7,7 @@ export const createOrder = createAsyncThunk('order/create', async (orderData,  {
   const {shippingInfo, orderItems, paymentInfo, itemsPrice, taxPrice, shippingPrice, totalPrice} = orderData;
 
   try{
-    const res = await fetch('/api/v1/order/new', {
+    const res = await fetch('https://mern-watch-shop-server.onrender.com/api/v1/order/new', {
       method: 'POST', 
       body: JSON.stringify({shippingInfo, orderItems, paymentInfo, itemsPrice, taxPrice, shippingPrice, totalPrice}),
       headers: {
@@ -30,7 +30,7 @@ export const createOrder = createAsyncThunk('order/create', async (orderData,  {
 
 // myOrders thunk
 export const myOrders = createAsyncThunk('order/myOrders', async () => {
-    const res = await fetch('/api/v1/orders/me', {
+    const res = await fetch('https://mern-watch-shop-server.onrender.com/api/v1/orders/me', {
       method: 'GET',
       headers: {'Content-Type': 'application/json'}
     })
