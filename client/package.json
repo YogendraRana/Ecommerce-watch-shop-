@@ -2,7 +2,8 @@
   "name": "watch-shop",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8000/",
+  // "proxy": "http://localhost:8000/",
+  "proxy": "https://mern-watch-shop-server.onrender.com/",
   "dependencies": {
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
