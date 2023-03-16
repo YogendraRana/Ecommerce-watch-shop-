@@ -43,7 +43,7 @@ function App() {
     store.dispatch(getUserDetail());
 
     const getStripeApiKey = async () => {
-      const res = await fetch('/payment/stripepublishablekey');
+      const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/payment/stripepublishablekey`);
       const data = await res.json()
       setStripePublishableKey(data.stripepublishablekey);
     }

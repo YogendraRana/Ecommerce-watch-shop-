@@ -35,7 +35,7 @@ const DATABASE = process.env.DATABASE
 app.use(express.json({limit: '50mb'}));
 app.use(cookieParser());
 app.use(cors({
-  origin: 'https://mern-watch-shop-client.onrender.com',
+  origin: process.env.CLIENT_URL,
 }));
 
 //database and server connection

@@ -21,10 +21,6 @@ module.exports.registerUser = async (req, res, next) => {
 
 		// create chat 
 		const admin = await User.find({role: "admin"});
-		
-		// admin.forEach(async (adm) => {
-		// 	await Chat.create({participants: [adm._id, user._id]});
-		// })
 
 		const newChat = await Chat.create({participants: [admin[0]._id.toString(), user._id.toString()]});
 
@@ -66,7 +62,7 @@ module.exports.loginUser = async (req, res, next) => {
 		}
 
 		const token = user.createToken();
-		res.status(200).cookie('jwt', token, {expires: new Date(Date.now() + 9000000), httpOnly: false}).json({
+		res.status(200).cookie('jwt', token, {expires: new Date(Date.now() + 9000000), httpOnly: false, sameSite: 'none'}).json({
 			success: true,
 			message: 'User logged in successfully',
 			token,
