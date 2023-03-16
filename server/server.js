@@ -36,7 +36,6 @@ app.use(express.json({limit: '50mb'}));
 app.use(cookieParser());
 app.use(cors({
   origin: 'https://mern-watch-shop-client.onrender.com',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }));
 
 //database and server connection
