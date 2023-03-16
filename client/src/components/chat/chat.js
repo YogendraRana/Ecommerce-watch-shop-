@@ -29,7 +29,7 @@ const Chat = () => {
 	const {user} = useSelector(state => state.user);
 
 	useEffect(() => {
-		socket.current = io('http://localhost:8800');
+		socket.current = io('https://mern-watch-shop-server.onrender.com');
 		socket.current.on('get-message', data => {
 			setArrivalMessage({
 				chat: data.chatId,

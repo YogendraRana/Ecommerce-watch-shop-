@@ -5,7 +5,7 @@ let activeUsers = [];
 const io = new Server(8800, {
   pendingTimeout: 60000,
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://mern-watch-shop-server.onrender.com",
     credentials: true
   }
 });
