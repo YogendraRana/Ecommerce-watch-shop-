@@ -25,8 +25,8 @@ const messageRoutes = require('./routes/messageRoutes');
 const app = express();
 
 //configure dotenv file
-//i can remove it if i manually set all env variables in render.com
-dotenv.config({path: './config.env'}); 
+//adding secret file in render.com and using following path to access/read it
+dotenv.config({ path: '/etc/secrets/config.env' });
 
 //variables
 const PORT = process.env.PORT || 8000;
