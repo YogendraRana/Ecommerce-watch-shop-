@@ -42,7 +42,7 @@ const Hero = () => {
 	useEffect(() => {
 		const getRecommendations = async () => {
 			try{
-				const res = await fetch('https://mern-watch-shop-client.onrender.com/api/v1/products/recommendation');
+				const res = await fetch('https://mern-watch-shop-server.onrender.com/api/v1/products/recommendation');
 				const data = await res.json();
 				setHeroProduct(data.specialOffers[0]);
 				setLoading(false);
