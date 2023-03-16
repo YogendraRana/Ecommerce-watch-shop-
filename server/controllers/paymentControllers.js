@@ -1,12 +1,17 @@
 const ErrorHandler = require('../utils/errorHandler.js');
+const Stripe = require('stripe')
 
-//stripe instance
-const stripe = require('stripe')('sk_test_51LJoYWJGadnVkB6Efl60cfoQYmAXZMTcPdV8y0pktdNJJwmIq3qzxXFr9xGvHAgiXe1T4TptUeWDAYGKi6wWjG45005BEpIcHS');
+
+//send stripe publishable key to client
+module.exports.sendStripePublishableKey = async (req, res, next) => {
+  res.status(200).json({ stripepublishablekey: process.env.STRIPE_PUBLISHABLE_KEY });
+};
 
 
 //payment process
 module.exports.processPayment = async (req, res, next) => {
 	const {amount, email} = req.body;
+	const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 	try{
 			const intent = await stripe.paymentIntents.create({
@@ -26,12 +31,3 @@ module.exports.processPayment = async (req, res, next) => {
 		return next(new ErrorHandler(err.message, err.code));
 	}
 }
-
-
-//send stripe publishable key to client
-module.exports.sendStripePublishableKey = async (req, res, next) => {
-  res.status(200).json({ stripepublishablekey: process.env.STRIPE_PUBLISHABLE_KEY });
-};
-
-
-

@@ -1,65 +1,97 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react'
+import {toast} from 'react-toastify'
 
-//Contact.css
+// import css and conponents
 import './contact.css'
-
-// import seo
-import Seo from '../seo/seo.js'
+import Seo from '../seo/seo'
 
 const Contact = () => {
-	const [name, setName] = useState('');
-	const [email, setEmail] = useState('admin@gmail.com');
+
+    const [name, setName] = useState('');
+    const [sender, setSender] = useState('');
+    const [subject, setSubject] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if(!name || !sender || !message) {return toast.warn("Fill all the required fields!")};
+
+        try {   
+            const res = await fetch('/api/v1/send/email', {
+                method: 'POST', 
+                body: JSON.stringify({name, sender, subject, message}),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+
+            const data = await res.json();
+
+            if (!data.success) {throw new Error()};
+            if (data.success) {
+                toast.success(data.message);
+                setName('');
+                setSender('');
+                setSubject('');
+                setMessage('');
+            } else {
+                toast.error(data.message);
+            } 
+        } catch (err) {
+            return toast.error(err.message);
+        }
+    }
 
     return (
-    	<>
-    		<Seo title='Contact Page' descripion='Contact page of Time Zn' />
+        <>
+            <Seo title="Contact Page"  description="Contact page of the website." />
+            <div className="contactContainer">
+                <div className="heading">
+                    <h2>Get in touch with us</h2>
+                    <p>For more information about our product & Services. please feel free to drop us an
+                    <br/>email. our staff always be there to help you out. do not hesitate!</p>
+                </div>
 
-		    <section className="contact-section">
-		    	<div className='contact-container'>
-			    	<div className="left-column">		    		
-			   			<form>
-			    			<h3>Contact Us</h3>
-							<input type="text" placeholder="full name" value={name} onChange={(e) => setName(e.target.value)} required/>
-							<input type="email" placeholder="email" value={email} />
-							<textarea placeholder="write your message here"></textarea>
-							<button className="submit-btn" type="submit">Send</button>
-						</form>
-			    	</div>
+                <div className="content">
+                    <div className="info">
+                        <i className="fas fa-mobile-alt"></i>
+                        <h4>PHONE </h4>
+                        <p>061-208924 , 061-462953</p>
+                    </div>
+                    <div className="info">
+                        <i className="fas fa-map-marker-alt"></i> 
+                        <h4>ADDRESS </h4>
+                        <p>8th Street, Baidam-6, Pokhara</p>
+                    </div>
+                </div>
 
-			    	<div className="right-column">
-			    		<div className="contact-info">
-			    			<div className="info-card">
-								<div className="info-topic">
-									<i className="fa fa-mobile" aria-hidden="true"></i>	
-									<span>Phone</span>
-								</div>
-								<div className="info">+977 9812375849</div>	
-							</div>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label>Your Name</label> <br />
+                        <input type="text" placeholder="John Doe" value={name} onChange={(e) => setName(e.target.value)} />
+                    </div>
 
-							<div className="info-card">
-								<div className="info-topic">
-									<i className="fa fa-map-marker" aria-hidden="true"></i>
-									<span>Address</span>
-								</div>
-								<div className="info">Bay Area, California</div>	
-							</div>
+                    <div>
+                        <label>Your Email</label> <br />
+                        <input type="text" placeholder="example@emil.com" value={sender} onChange={e => setSender(e.target.value)} />
+                    </div>
 
-							<div className="info-card">
-								<div className="info-topic">
-									<i className="fa fa-envelope" aria-hidden="true"></i>
-									<span>Email</span>
-								</div>
-								<div className="info">imperialtime@gmail.com</div>	
-							</div>
-						</div>
-			    	</div>
-		    	</div>
-	    	</section>
- 		</>
+                    <div>
+                        <label>Subject</label> <br />
+                        <input type="text" placeholder="Optional" value={subject} onChange={e => setSubject(e.target.value)} />
+                    </div>
+
+                    <div>
+                        <label>Message</label> <br />
+                        <textarea type="text" placeholder="Message..." value={message} onChange={e => setMessage(e.target.value)}/>
+                    </div>
+
+                    <button type='submit'>Send</button>
+                </form>
+            </div>
+        </>
     )
 }
 
 export default Contact
-
-
-

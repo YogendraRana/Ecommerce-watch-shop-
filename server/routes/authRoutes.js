@@ -17,7 +17,8 @@ const {
 	getEmployees,
 	addEmployee,
 	updateEmployee,
-	deleteEmployee
+	deleteEmployee,
+	sendMailFromContact
 } = require('../controllers/authControllers.js');
 
 const router = Router();
@@ -32,6 +33,7 @@ router.get('/api/v1/logout', isAuthenticated, logoutUser);
 router.get('/api/v1/profile', isAuthenticated, getUserProfile);
 router.get('/api/v1/user/:userId', isAuthenticated, getUserDetail);
 router.put('/api/v1/profile/update', isAuthenticated, updateProfile);
+router.post('/api/v1/send/email', sendMailFromContact);
 
 
 //admin routes

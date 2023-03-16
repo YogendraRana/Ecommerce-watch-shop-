@@ -103,7 +103,7 @@ const Navbar = () => {
 						{!isAuthenticated && <Link to='/login' style={{border: '1px solid #b2beb5'}}>Login</Link>}
 						{isAuthenticated && <Link to='/profile' style={{border: '1px solid #b2beb5'}}>{user.name}</Link>}
 						{user && user.role === 'admin' && <Link to='/admin'>Admin Panel</Link>}
-						<button onClick={handleLogOut}>Logout</button>
+						{isAuthenticated && <button onClick={handleLogOut}>Logout</button>}
 					</div>
 				</div>					
 

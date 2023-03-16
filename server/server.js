@@ -28,7 +28,7 @@ const app = express();
 dotenv.config({path: './config.env'});
 
 //variables
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 const DATABASE = process.env.DATABASE
 
 //middleware
