@@ -69,7 +69,7 @@ export const deleteProduct = createAsyncThunk('admin/product/deleteProduct', asy
 
 //getAllUsers thunk
 export const getAllUsers = createAsyncThunk('admin/user/getAllUsers', async () => {
-  const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/users`);
+  const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/users`, {credentials: "include"});
   const data = await res.json();
   return data;
 })
@@ -95,7 +95,7 @@ export const deleteUser = createAsyncThunk('admin/user/deleteUser', async (id, {
 
 //getEmployees thunk
 export const getEmployees = createAsyncThunk('admin/employee/getEmployees', async () => {
-  const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/employees`);
+  const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/employees`, {creadntials: "include"});
   const data = await res.json();
   return data;
 })
@@ -172,7 +172,7 @@ export const deleteEmployee = createAsyncThunk('admin/employee/deleteEmployee', 
 
 //getAllOrders thunk
 export const getAllOrders = createAsyncThunk('admin/orders/getAllOrders', async () => {
-  const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/orders`);
+  const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/orders`, {credentials: "include"});
   const data = await res.json();
   return data;
 })
