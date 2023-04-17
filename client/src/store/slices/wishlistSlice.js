@@ -3,7 +3,7 @@ import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 // getWishlist
 export const getWishlist = createAsyncThunk('user/wishlist/getWishlist', async (data, {rejectWithValue, fulfillWithValue}) => {
   try{
-    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/wishlist`, {method: 'GET'});
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/wishlist`, {method: 'GET', credentials: "include"});
 
     const data = await res.json();
 

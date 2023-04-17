@@ -32,6 +32,7 @@ export const createOrder = createAsyncThunk('order/create', async (orderData,  {
 export const myOrders = createAsyncThunk('order/myOrders', async () => {
     const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/orders/me`, {
       method: 'GET',
+      credentials: 'include',
       headers: {'Content-Type': 'application/json'}
     })
 
