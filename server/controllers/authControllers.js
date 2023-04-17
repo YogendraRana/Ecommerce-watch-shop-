@@ -19,9 +19,10 @@ module.exports.registerUser = async (req, res, next) => {
 		const token = user.createToken();
 		res.cookie('jwt', token, {
 			expires: new Date(Date.now() + 900000), 
-			domain: process.env.CLIENT_URL,
+			domain: '.onrender.com',
 			sameSite: 'none',
 			httpOnly: false, 
+			secure: true,
 		});
 
 		// create chat 
@@ -69,11 +70,12 @@ module.exports.loginUser = async (req, res, next) => {
 		const token = user.createToken();
 		res.cookie('jwt', token, {
 			expires: new Date(Date.now() + 900000), 
-			domain: process.env.CLIENT_URL,
+			domain: '.onrender.com',
 			sameSite: 'none',
 			httpOnly: false, 
+			secure: true,
 		});
-		
+
 		res.json({
 			success: true,
 			message: 'User logged in successfully',
