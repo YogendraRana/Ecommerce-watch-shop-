@@ -121,7 +121,7 @@ const Profile = () => {
 					<>
 						{
 							ordersLoading ? <Spinner style={{height: `20rem`}} /> : (
-								!orders[0] ? (
+								(!orders || !orders[0] ) ? (
 									<div className='no-orders'>
 										<p>You have not ordered anything yet.</p>
 										<Link to='/'>Explore our products</Link>
