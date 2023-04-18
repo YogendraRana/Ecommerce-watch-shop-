@@ -29,7 +29,7 @@ const Chat = () => {
 	const {user} = useSelector(state => state.user);
 
 	useEffect(() => {
-		socket.current = io(`${process.env.REACT_APP_SERVER_URL}`);
+		socket.current = io('http://localhost:8800');
 		socket.current.on('get-message', data => {
 			setArrivalMessage({
 				chat: data.chatId,
@@ -58,7 +58,7 @@ const Chat = () => {
 	useEffect(() => {
 		const getChats = async () => {
 			try{
-			    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/chat/${user._id}`);
+			    const res = await fetch(`/api/v1/chat/${user._id}`);
 			    const data = await res.json();
 			    setChats(data.chats);
 			}catch(err){
@@ -76,7 +76,7 @@ const Chat = () => {
 			try{
 				if(currentChat === null) return;
 
-				const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/messages/${currentChat?._id}`);
+				const res = await fetch(`/api/v1/messages/${currentChat?._id}`);
 				const data = await res.json();
 				setCurrentMessages(data.chatMessages);
 				setGetChatLoading(false);
@@ -108,7 +108,7 @@ const Chat = () => {
 		});
 
 		try{
-			const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/message/new`, {
+			const res = await fetch(`/api/v1/message/new`, {
 				method: 'POST',
 				body: JSON.stringify(message),
 				headers:{
@@ -156,11 +156,11 @@ const Chat = () => {
 								<span>{user?.name}</span>
 							</div>
 
-							<div className='chat-options'>
+							{/* <div className='chat-options'>
 								<i className='fa fa-phone' onClick={() => toast.warn("This service is currently unavailable!")}></i>
 								<i className='fa fa-video' onClick={() => toast.warn("This service is currently unavailable!")}></i>
 								<i className='fa fa-bars' onClick={() => toast.warn("This service is currently unavailable!")}></i>
-							</div>
+							</div> */}
 						</div>
 
 						<div className='chat-feed' id='chat-feed'>

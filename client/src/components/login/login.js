@@ -58,11 +58,6 @@ const Login = () => {
 			        	<input type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" autoComplete="off" required/>
 			      	</div>
 
-			      	<div className="remember-me">
-			        	<input type="checkbox" />
-			        	<span>Remember me?</span>
-					</div>	
-
 					<div>
 						<button type="submit" onClick={handleLogin}>{loading ? "Loading..." : "Log In"}</button>
 					</div>

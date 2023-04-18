@@ -3,7 +3,7 @@ import {createSlice, createAsyncThunk, isAnyOf} from '@reduxjs/toolkit'
 export const forgotPassword = createAsyncThunk('user/forgotPassword', async (email,  {rejectWithValue, fulfillWithValue}) => {
 
   try{
-    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/password/forgot`, {
+    const res = await fetch(`/api/v1/password/forgot`, {
       method: 'POST', 
       body: JSON.stringify({email}),
       headers: {
@@ -31,7 +31,7 @@ export const resetPassword = createAsyncThunk('user/resetPassword', async (reset
   console.log(resetPasswordInfo);
 
   try{
-    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/password/reset/${token}`, {
+    const res = await fetch(`/api/v1/password/reset/${token}`, {
       method: 'PUT', 
       body: JSON.stringify({password, confirmPassword}),
       headers: {

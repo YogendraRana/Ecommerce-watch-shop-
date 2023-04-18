@@ -4,7 +4,7 @@ export const updateProfile = createAsyncThunk('profile/update', async (updateDat
   const {name, email} = updateData;
 
   try{
-    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/profile/update`, {
+    const res = await fetch(`/api/v1/profile/update`, {
       method: 'PUT', 
       body: JSON.stringify({name, email}),
       headers: {
@@ -30,7 +30,7 @@ export const changePassword = createAsyncThunk('user/changePassword', async (pas
   const {oldPassword, newPassword, confirmNewPassword} = passwordInfo;
 
   try{
-    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/password/change`, {
+    const res = await fetch(`/api/v1/password/change`, {
       method: 'PUT', 
       body: JSON.stringify({oldPassword, newPassword, confirmNewPassword}),
       headers: {

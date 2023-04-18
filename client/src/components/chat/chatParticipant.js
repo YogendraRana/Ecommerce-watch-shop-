@@ -19,7 +19,7 @@ const ChatParticipant = ({chat, onlineUsers}) => {
 	useEffect(() => {
 		const getUser = async () => {
 			try{
-				const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/user/${otherParticipantId}`);
+				const res = await fetch(`/api/v1/user/${otherParticipantId}`);
 				const data = await res.json();
 				setOtherUser(data.user);
 				setLoading(false);	
@@ -47,7 +47,7 @@ const ChatParticipant = ({chat, onlineUsers}) => {
 		<div className='participant'>
 			<img src={profile} alt='profile-pic' />
 			<div>
-				<p className='participant-name'>{loading ? 'Loading...' : (otherUser.role === "admin") ? "Admin" : otherUser.name}</p>
+				<p className='participant-name'>{loading ? 'Loading...' : (otherUser?.role === "admin") ? "Admin" : otherUser?.name}</p>
 				<p className='chat-state' style={{color: online ? "green" : "red"}}>{online ? "Online" : "Offline"}</p>
 			</div>
 		</div>

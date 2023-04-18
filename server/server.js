@@ -25,20 +25,18 @@ const messageRoutes = require('./routes/messageRoutes');
 const app = express();
 
 //configure dotenv file
-//adding secret file in render.com and using following path to access/read it
-dotenv.config({ path: '/etc/secrets/config.env' });
+dotenv.config({ path: './config.env' });
 
 //variables
 const PORT = process.env.PORT || 8000;
-const DATABASE = process.env.DATABASE
 
 //middleware
 app.use(express.json({limit: '50mb'}));
 app.use(cookieParser());
-app.use(cors({origin: process.env.CLIENT_URL, credentials: true}));
+app.use(cors({origin: 'http://localhost:3000', credentials: true}));
 
 //database and server connection
-mongoose.connect(DATABASE, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.DATABASE_URI, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => app.listen(PORT, () => console.log(`Server listening on ${PORT}`)))
 .catch(err => console.log(err));
 
@@ -62,7 +60,6 @@ app.use('/api/v1', wishlistRoutes);
 app.use('/api/v1', subscriberRoutes);
 app.use('/api/v1', chatRoutes);
 app.use('/api/v1', messageRoutes);
-
 
 //error middleware
 app.use(errorMiddleware);

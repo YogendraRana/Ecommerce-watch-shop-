@@ -19,7 +19,7 @@ module.exports.registerUser = async (req, res, next) => {
 		const token = user.createToken();
 		res.cookie('jwt', token, {
 			expires: new Date(Date.now() + 900000), 
-			domain: '.onrender.com',
+			// domain: '.onrender.com',
 			sameSite: 'none',
 			httpOnly: false, 
 			secure: true,
@@ -71,7 +71,7 @@ module.exports.loginUser = async (req, res, next) => {
 		const token = user.createToken();
 		res.cookie('jwt', token, {
 			expires: new Date(Date.now() + 900000), 
-			domain: '.onrender.com',
+			// domain: '.onrender.com',
 			sameSite: 'none',
 			httpOnly: false, 
 			secure: true,
@@ -126,7 +126,12 @@ module.exports.getUserDetail = async (req, res, next) => {
 
 //logout get authController
 module.exports.logoutUser = (req, res) => {
+	 //express code for cookie
 	res.clearCookie('jwt', {path: '/'});
+
+	 //node code for cookie
+	// res.cookie('jwt', '', { expires: new Date(0) });
+	
 	res.status(200).send({
 		success: true,
 		message: "User logged out"

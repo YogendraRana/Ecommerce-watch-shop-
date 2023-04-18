@@ -42,7 +42,7 @@ const Hero = () => {
 	useEffect(() => {
 		const getRecommendations = async () => {
 			try{
-				const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/products/recommendation`);
+				const res = await fetch(`/api/v1/products/recommendation`);
 				const data = await res.json();
 				setHeroProduct(data.specialOffers[0]);
 				setLoading(false);
