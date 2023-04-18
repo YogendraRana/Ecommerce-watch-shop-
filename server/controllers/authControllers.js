@@ -23,6 +23,7 @@ module.exports.registerUser = async (req, res, next) => {
 			sameSite: 'none',
 			httpOnly: false, 
 			secure: true,
+			path: '/',
 		});
 
 		// create chat 
@@ -74,6 +75,7 @@ module.exports.loginUser = async (req, res, next) => {
 			sameSite: 'none',
 			httpOnly: false, 
 			secure: true,
+			path: '/',
 		});
 
 		res.json({
