@@ -20,7 +20,5 @@ backend. The database used is MongoDB.
 
 <br />
 <h3 align=center>Chekout UI</h3>
-![Screenshot 2023-05-04 191310](https://user-images.githubusercontent.com/71174333/236220721-cef78154-7b9b-499a-8122-183adbee04f4.jpg)
-![Screenshot 2023-05-04 191410](https://user-images.githubusercontent.com/71174333/236220728-6761a438-b5e4-4a46-ad0b-6ffb60db8e3f.jpg)
-
-
+<img alt="checkout" src="https://user-images.githubusercontent.com/71174333/236220721-cef78154-7b9b-499a-8122-183adbee04f4.jpg"></img>
+<img alt="checkout" src="https://user-images.githubusercontent.com/71174333/236220728-6761a438-b5e4-4a46-ad0b-6ffb60db8e3f.jpg"></img>
