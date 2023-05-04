@@ -15,7 +15,7 @@ backend. The database used is MongoDB.
 
 <br />
 <h3 align=center>Cart UI</h3>
-![Screenshot 2023-05-04 191054](https://user-images.githubusercontent.com/71174333/236220706-c07c1f1d-0590-4742-a538-7ec935d2788a.jpg)
+<img alt="checkout" src="https://user-images.githubusercontent.com/71174333/236220706-c07c1f1d-0590-4742-a538-7ec935d2788a.jpg"></img>
 
 
 <br />
