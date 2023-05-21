@@ -74,7 +74,7 @@ const Hero = () => {
 						{heroProduct.discount !== null && <s>$ {heroProduct.price}</s>}
 					</p>
 					
-					<button onClick={handleAddToCart}>Shop Now</button>        
+					<button onClick={handleAddToCart}>Shop Now</button>  
 				</div>
 
 				<div className="right-column">
