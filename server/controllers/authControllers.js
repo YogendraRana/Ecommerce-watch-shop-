@@ -16,20 +16,21 @@ module.exports.registerUser = async (req, res, next) => {
 		}
 
 		const user = await User.create({name, email, password, cpassword});
-		const token = user.createToken();
-		res.cookie('jwt', token, {
-			expires: new Date(Date.now() + 900000), 
-			// domain: '.onrender.com',
-			sameSite: 'none',
-			httpOnly: false, 
-			secure: true,
-			path: '/',
-		});
+		
+        const token = user.createToken();
+        
+        const sameSite = req.secure ? 'none' : 'lax'; 
+        res.cookie('jwt', token, {
+            maxAge: 1*24*60*60*1000, 
+            httpOnly: true, 
+            sameSite: sameSite, 
+            secure: req.secure
+        });
 
 		// create chat 
 		const admin = await User.find({role: "admin"});
 
-		const newChat = await Chat.create({participants: [admin[0]._id.toString(), user._id.toString()]});
+		await Chat.create({participants: [admin[0]._id.toString(), user._id.toString()]});
 
 		res.status(201).json({
 			success: true,
@@ -69,14 +70,17 @@ module.exports.loginUser = async (req, res, next) => {
 		}
 
 		const token = user.createToken();
-		res.cookie('jwt', token, {
-			expires: new Date(Date.now() + 900000), 
-			// domain: '.onrender.com',
-			sameSite: 'none',
-			httpOnly: false, 
-			secure: true,
-			path: '/',
-		});
+	
+        // set SameSite attribute to "none" for HTTPS, "lax" for HTTP
+        const sameSite = req.secure ? 'none' : 'lax'; 
+
+        res.cookie('jwt', token, {
+            maxAge: 1 * 24 * 60 * 60 * 1000, 
+            httpOnly: true, 
+            sameSite: sameSite, 
+            secure: req.secure,
+            domain: 'localhost',
+        });
 
 		res.json({
 			success: true,
@@ -126,11 +130,8 @@ module.exports.getUserDetail = async (req, res, next) => {
 
 //logout get authController
 module.exports.logoutUser = (req, res) => {
-	 //express code for cookie
+	//express code for cookie
 	res.clearCookie('jwt', {path: '/'});
-
-	 //node code for cookie
-	// res.cookie('jwt', '', { expires: new Date(0) });
 	
 	res.status(200).send({
 		success: true,

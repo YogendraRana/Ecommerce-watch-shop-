@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 //getAdminProducts thunk
 export const getAdminProducts = createAsyncThunk('admin/products/getAdminProducts', async () => {
-    const res = await fetch(`/api/v1/admin/products`);
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/products`);
     const data = await res.json();
     return data;
   }
@@ -13,7 +13,7 @@ export const addProduct = createAsyncThunk('admin/product/addProduct', async (pr
   const {name, price, stock, category, description, images, discount} = productData;
 
   try{
-    const res = await fetch(`/api/v1/admin/product/new`, {
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/product/new`, {
       method: 'POST',
       body: JSON.stringify({name, price,  stock,  category,  description,  images, discount}),
       headers: {
@@ -39,7 +39,7 @@ export const updateProduct = createAsyncThunk('admin/product/updateProduct', asy
   const {id, name, price, stock, category, description, images, discount} = productData;
 
   try{
-    const res = await fetch(`/api/v1/admin/product/${id}`, {
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/product/${id}`, {
       method: 'PUT',
       body: JSON.stringify({name, price, stock, category, description, images, discount}),
       headers: {
@@ -62,14 +62,14 @@ export const updateProduct = createAsyncThunk('admin/product/updateProduct', asy
 
 //deleteProduct thunk
 export const deleteProduct = createAsyncThunk('admin/product/deleteProduct', async (id) => {
-  const res = await fetch(`/api/v1/admin/product/${id}`, {method: 'DELETE'});
+  const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/product/${id}`, {method: 'DELETE'});
   const data = await res.json();
   return data;
 })
 
 //getAllUsers thunk
 export const getAllUsers = createAsyncThunk('admin/user/getAllUsers', async () => {
-  const res = await fetch(`/api/v1/admin/users`, {credentials: "include"});
+  const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/users`, {credentials: "include"});
   const data = await res.json();
   return data;
 })
@@ -77,7 +77,7 @@ export const getAllUsers = createAsyncThunk('admin/user/getAllUsers', async () =
 //deleteUser thunk
 export const deleteUser = createAsyncThunk('admin/user/deleteUser', async (id, {rejectWithValue, fulfillWithValue}) => { 
   try{
-    const res = await fetch(`/api/v1/admin/users/${id}`, {method: 'DELETE'});
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/users/${id}`, {method: 'DELETE'});
 
     const data = await res.json();
 
@@ -95,7 +95,7 @@ export const deleteUser = createAsyncThunk('admin/user/deleteUser', async (id, {
 
 //getEmployees thunk
 export const getEmployees = createAsyncThunk('admin/employee/getEmployees', async () => {
-  const res = await fetch(`/api/v1/admin/employees`, {creadntials: "include"});
+  const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/employees`, {creadntials: "include"});
   const data = await res.json();
   return data;
 })
@@ -105,7 +105,7 @@ export const addEmployee = createAsyncThunk('admin/employee/addEmployee', async 
   const {name, email,password, cpassword, role} = employeeData;
 
   try{
-    const res = await fetch(`/api/v1/admin/employee/new`, {
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/employee/new`, {
       method: 'POST',
       body: JSON.stringify({name, email, password, cpassword, role}),
       headers: {
@@ -132,7 +132,7 @@ export const updateEmployee = createAsyncThunk('admin/employee/updateEmployee', 
   const {id, name, email, role} = employeeData;
   
   try{
-    const res = await fetch(`/api/v1/admin/employee/update`, {
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/employee/update`, {
       method: 'PUT',
       body: JSON.stringify({id, name, email, role}),
       headers: {
@@ -155,7 +155,7 @@ export const updateEmployee = createAsyncThunk('admin/employee/updateEmployee', 
 //deleteEmployee thunk
 export const deleteEmployee = createAsyncThunk('admin/employee/deleteEmployee', async (id, {rejectWithValue, fulfillWithValue}) => {
   try{
-    const res = await fetch(`/api/v1/admin/employee/${id}`, {method: 'DELETE'});
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/employee/${id}`, {method: 'DELETE'});
 
     const data = await res.json();
 
@@ -172,7 +172,7 @@ export const deleteEmployee = createAsyncThunk('admin/employee/deleteEmployee', 
 
 //getAllOrders thunk
 export const getAllOrders = createAsyncThunk('admin/orders/getAllOrders', async () => {
-  const res = await fetch(`/api/v1/admin/orders`, {credentials: "include"});
+  const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/orders`, {credentials: "include"});
   const data = await res.json();
   return data;
 })
@@ -183,7 +183,7 @@ export const updateOrder = createAsyncThunk('admin/order/updateOrder', async (or
   const {id, status} = orderData;
   
   try{
-    const res = await fetch(`/api/v1/admin/order/${id}`, {
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/order/${id}`, {
       method: 'PUT',
       body: JSON.stringify({status}),
       headers: {
@@ -207,7 +207,7 @@ export const updateOrder = createAsyncThunk('admin/order/updateOrder', async (or
 //deleteOrder thunk
 export const deleteOrder = createAsyncThunk('admin/order/deleteOrder', async (id, {rejectWithValue, fulfillWithValue}) => {
   try{
-    const res = await fetch(`/api/v1/admin/order/${id}`, {method: 'DELETE'});
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/admin/order/${id}`, {method: 'DELETE'});
 
     const data = await res.json();
 

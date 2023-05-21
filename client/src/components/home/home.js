@@ -9,17 +9,21 @@ import Subscribe from '../subscribe/subscribe.js'
 
 // import seo
 import Seo from '../seo/seo.js'
+import useGet from '../../hook/useGet.js';
 
 const Home = () => {
+
+    const { data, isLoading } = useGet('/products/recommendation');
+
     const [show, setShow] = useState(4);
     const [current, setCurrent] = useState(0);
     const [_current, _setCurrent] = useState(0);
 
-    const [loading, setLoading] = useState(false)
     const [newArrivals, setNewArrivals] = useState([]);
     const [highestRated, setHighestRated] = useState([]);
 
     const useWindowSize = () => {
+
         const [size, setSize] = useState({height: window.innerHeight, width: window.innerWidth});
 
         useEffect(() => {
@@ -49,21 +53,11 @@ const Home = () => {
     const _next = () => _current === (highestRated.length-show) ? _setCurrent(highestRated.length-show) : _setCurrent(prevState => prevState + 1);
 
     useEffect(() => {
-        const getRecommendations = async () => {
-            try{
-                const res = await fetch(`/api/v1/products/recommendation`);
-                const data = await res.json();
-                setNewArrivals(data.newArrivals);
-                setHighestRated(data.highestRated);
-                setLoading(false);
-            }catch(err){
-                toast.error(err.message)
-                setLoading(false);
-            }
+        if(data && data.newArrivals[0] && data.highestRated[0]){
+            setNewArrivals(data.newArrivals);
+            setHighestRated(data.highestRated);
         }
-        
-        getRecommendations();
-    }, [])
+    }, [data])
 
 	return (
         <>
@@ -73,8 +67,8 @@ const Home = () => {
             </section>
 
             <section>
-                <Category name="New Arrivals" products={newArrivals} prev={prev} next={next} count={current} show={show} loading={loading} />
-                <Category name="Highest Rated" products={highestRated} prev={_prev} next={_next} count={_current} show={show} loading={loading} />
+                <Category name="New Arrivals" products={newArrivals} prev={prev} next={next} count={current} show={show} loading={isLoading} />
+                <Category name="Highest Rated" products={highestRated} prev={_prev} next={_next} count={_current} show={show} loading={isLoading} />
             </section>
 
             <section>

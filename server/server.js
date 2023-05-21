@@ -51,7 +51,6 @@ cloudinary.config({
 configSocket();
 
 //routes
-app.get('/', (req, res) => res.send("Home"));
 app.use('/api/v1', authRoutes);
 app.use('/api/v1', productRoutes);
 app.use('/api/v1', paymentRoute);

@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 //getProducts thunk
 export const getProducts = createAsyncThunk('products/getProducts', async ({keyword='', pageNumber=0, currentCategory}) => {
-    let link = `/api/v1/products?keyword=${keyword}&category=${currentCategory}&page=${pageNumber}`
+    let link = `${process.env.REACT_APP_SERVER_URL}/products?keyword=${keyword}&category=${currentCategory}&page=${pageNumber}`
 
     const res = await fetch(link);
     const data = await res.json();
@@ -12,7 +12,7 @@ export const getProducts = createAsyncThunk('products/getProducts', async ({keyw
 
 //getProductDetail thunk
 export const getProductDetail = createAsyncThunk('product/getProductDetail', async(id) => {
-    const res = await fetch(`/api/v1/product/${id}`);
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/product/${id}`);
     const data = await res.json();
     return data;
   }

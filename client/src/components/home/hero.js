@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {useDispatch} from 'react-redux'
 import {useHistory} from 'react-router-dom'
-import {toast} from 'react-toastify'
 
 // import component
 import Spinner from '../spinner/spinner.js'
@@ -12,14 +11,16 @@ import Carousel from '../utils/carousel.js'
 import './hero.css'
 
 // import actions
+import useGet from '../../hook/useGet.js'
 import {addToCart} from '../../store/slices/cartSlice.js'
 
 const Hero = () => {
-	const [heroProduct, setHeroProduct] = useState({});
-	const [loading, setLoading] = useState(true);
+    const { data, isLoading } = useGet('/products/recommendation');
 
 	const dispatch = useDispatch();
 	const history = useHistory();
+
+	const [heroProduct, setHeroProduct] = useState({});
 
 	const newPrice = heroProduct.price - (heroProduct.discount * heroProduct.price / 100);
 
@@ -39,20 +40,11 @@ const Hero = () => {
 		history.push('/cart');
 	}
 
-	useEffect(() => {
-		const getRecommendations = async () => {
-			try{
-				const res = await fetch(`/api/v1/products/recommendation`);
-				const data = await res.json();
-				setHeroProduct(data.specialOffers[0]);
-				setLoading(false);
-			}catch(err){
-				toast.error(err.message)
-			}
-		}
-		
-		getRecommendations();
-	}, [])
+    useEffect(() => {
+        if(data && data.specialOffers[0]){
+            setHeroProduct(data.specialOffers[0]);
+        }
+    }, [data])
 
 	return(
 		<>
@@ -78,7 +70,7 @@ const Hero = () => {
 				</div>
 
 				<div className="right-column">
-					{loading ? <Spinner /> :
+					{isLoading ? <Spinner /> :
 						!heroProduct.images ? <Message message='Something went wrong...' /> :
 						<Carousel data={heroProduct}/>
 					}
